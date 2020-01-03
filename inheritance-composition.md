@@ -1,8 +1,8 @@
 ---
 title: Inheritance vs Composition
-description:
-keywords:
-datePublished:
+description: Choosing between composition and inheritance is hard. Composition and Inheritance are the building blocks of an application structure. It is imperative to know when to use which one.
+keywords: inheritance vs composition, object oriented programming, software engineering, inheritance, composition, inheritance in java, inheritance in kotlin
+datePublished: '2019-09-14'
 ---
 
 # Inheritance vs Composition
