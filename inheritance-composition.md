@@ -13,14 +13,6 @@ Choosing between Composition and Inheritance is not easy. Often, the decision de
 
 The structure of an application plays an essential role in adding changes. Composition and Inheritance are the building blocks of an application structure. It is imperative to know when to use which one.
 
----
-
-This article was originally published at Medium on 14 September, 2019
-
-https://medium.com/the-mighty-programmer/oops-inheritance-vs-composition-ba1e32b5b0f4
-
----
-
 ## Definition
 
 ### Inheritance
