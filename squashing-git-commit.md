@@ -5,8 +5,6 @@ keywords: git, git squash, git clean history, git rewrite history, rebase, squas
 datePublished: '2018-06-17'
 ---
 
-# Squashing git commits
-
 Git is a leading version control software (VCS). There may be a time in your experience when you have to commit very often with a small change.
 
 Typically, Feedback Loop involving work leads you to commit frequently.

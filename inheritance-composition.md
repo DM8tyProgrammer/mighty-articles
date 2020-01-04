@@ -5,8 +5,6 @@ keywords: inheritance vs composition, object oriented programming, software engi
 datePublished: '2019-09-14'
 ---
 
-# Inheritance vs Composition
-
 With the introduction of OOPs, Inheritance and Composition entered our senses and still confusing us.
 
 Choosing between Composition and Inheritance is not easy. Often, the decision depends upon the information which is not yet there.
@@ -42,7 +40,7 @@ cat.walk() // Cat can "reuse" parent class behavior
 
 ### Composition
 
-**Composition** is a way of reusing code by interacting with the referred class _without any structural imposition_.
+_Composition_ is a way of reusing code by interacting with the referred class _without any structural imposition_.
 
 ```kotlin
 // Reference Class
@@ -114,15 +112,15 @@ Imagine, If in future, library developers add new behaviours to the referred Cla
 Inheritance and Composition not only allow to reuse the code; they also define a relationship semantic between two classes.
 
 ```
-is-a
-has-* (* means any quantifier)
+Inheritance :  is-a
+Composition : has-* (* means any quantifier)
 ```
 
-Apple is a Fruit. (Inheritance)
-Apple has seeds. (Composition)
+Apple _is a_ Fruit. (Inheritance)  
+Apple _has_ seeds. (Composition)
 
-Human is a mammal. (Inheritance)
-Human has two hands. (Composition)
+Human _is a_ mammal. (Inheritance)  
+Human _has_ two hands. (Composition)
 
 These keywords assist in basic analysing the requirements.
 
@@ -201,5 +199,5 @@ class Topping(val price: Int) {
 
 ## References
 
-1. Disable specific annotation in Jackson
+1. Disable specific annotation in Jackson  
    https://github.com/FasterXML/jackson-databind/issues/133
