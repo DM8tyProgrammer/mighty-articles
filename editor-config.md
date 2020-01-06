@@ -1,7 +1,7 @@
 ---
-title: Level 0 - Coding Standard with EditorConfig
+title: 'Level 0 - Coding Standard with EditorConfig'
 description: 'Editor Config, an INI format based configuration system that let you establish project level coding standard; It allows configuring: indentation style, indentation size, line width and more'
-image: '/post/editor-config.jpg'
+image: 'https://themightyprogrammer.dev/post/editor-config.jpg'
 keywords: 'coding standard, editor config, consistent coding standard, editor config guide, editorconfig tutorial'
 datePublished: '2020-06-2020'
 ---

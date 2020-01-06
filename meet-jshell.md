@@ -50,7 +50,7 @@ JShell starts with a welcome message along with prompt `jshell>` which indicates
 
 Type any statement or expression to get started with it. You would be astonished after seeing the immediate result.
 
-```sh
+```java
 jshell> 2 + 3 // expression
 $1 ==> 5        // Result is shown as soon as you finished
 jshell> int x = 10 // variable | ; is optional
@@ -63,7 +63,7 @@ A statement should not end with `;`, but if you are clubbing multiple statement
 
 ### Variables
 
-```sh
+```java
 jshell> int y = 1;double z = 2.0
 y ==> 1
 z ==> 2.0
@@ -73,7 +73,7 @@ To know the value of a variable, you can type the variable name.
 
 JShell assigns each expression a name starting with `$` and followed by a number only if you have not assigned the name for it, e.g. `new Date()` is assigned `$3`.
 
-```sh
+```java
 jshell> x
 x ==> 10
 jshell>$3
@@ -82,7 +82,7 @@ $3 ==> Mon Aug 28 10:21:21 IST 2017
 
 If you could not remember what name JShell has assigned to your expression, don't worry; just type `/vars` and voila! It lists all the variables you have typed and expression values.
 
-```sh
+```java
 jshell> /vars
 | int $1 = 5
 |    int x = 0
@@ -95,7 +95,7 @@ jshell> /vars
 
 ### Control Statements, methods, types, …
 
-```sh
+```java
 jshell> for (int hi = 0; hi < 2; hi++) {
 ...> System.out.println("hi"); //; is required here.
 ...> }
@@ -292,11 +292,11 @@ jshell> class A {
 JShell provides a helpline to get the help about it, all you have to dial `/help`. It lists all the commands with brief usage.
 To get more details about a command
 
-```
+```sh
 /help <command>
 ```
 
-```sh
+```
 jshell> /help /exit
 |
 | /exit
@@ -311,7 +311,7 @@ If documentation is too geeky for you, don't be shy to ask for the help.
 
 `/exit` command helps you to get out of JShell.
 
-```sh
+```
 jshell> /exit
 | Goodbye
 ```
