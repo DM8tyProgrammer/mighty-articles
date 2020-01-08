@@ -6,7 +6,7 @@ keywords: 'coding standard, editor config, consistent coding standard, editor co
 datePublished: '2020-06-2020'
 ---
 
-[Editor Config](https://editorconfig.org), an INI¹ format based configuration system that let you establish project level coding standard; It allows configuring: indentation style, indentation size, line width and more.
+[Editor Config](https://editorconfig.org), an INI¹ format based configuration system that let you establish project level coding standard; It allows configuring: indentation style, indentation size, line width and more. It helps in reducing the effort required to bring each team member to the consistent coding standing by automatically applying the config to IDE.
 
 ## What is EditorConfig solving?
 
@@ -97,7 +97,25 @@ indent_size = 4 #override the size 2 for 4
 curly_bracket_next_line = true
 ```
 
-Check out the [official docs](https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties) to know full supported properties.
+Check out the [official docs](https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties) to know full supported rules.
+
+---
+
+IDEs have been started supporting their custom rules.
+[IntelliJIdea](https://www.jetbrains.com/help/idea/configuring-code-style.html) supports the following rules:
+
+```ini
+ij_visual_guides
+ij_formatter_off_tag
+ij_formatter_on_tag
+ij_formatter_tags_enabled
+ij_wrap_on_typing
+ij_continuation_indent_size
+ij_smart_tabs
+ij_java_blank_lines_after_imports
+```
+
+Using these rules would defeat the whole purpose of EditorConfig (:think).
 
 ---
 
