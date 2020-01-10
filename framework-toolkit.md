@@ -1,5 +1,5 @@
 ---
-title: 'Library - Framework and Tookit'
+title: 'Library - Framework and Toolkit'
 subtitle: 'Shareable Code aspects'
 image: https://miro.medium.com/max/5600/1*rujr0xAqANInP9pdzXZcsw.png
 datePublished: '2018-01-25'
@@ -57,10 +57,10 @@ class Student {
 - **Technical Level Frameworks** are focused on providing technical problems solutions. They are smaller in scope, thus permits you an option to combine with multiple frameworks to write an application.
   Typical Examples
 
-* Transactions ([Spring](https://spring.io/) [Java]),
-* Object Relational Mapping ([Hibernate](https://hibernate.org/)[Java], Sequelize [Node.js] ..)
-* Dependency Injection ([Dagger](https://dagger.dev/), Spring IOC, Guice/Java)
-* [Angular](https://angular.io/), [React](https://reactjs.org/), [Vue](https://vuejs.org/) (Fronted frameworks)
+  - Transactions ([Spring](https://spring.io/) [Java]),
+  - Object Relational Mapping ([Hibernate](https://hibernate.org/)[Java], Sequelize [Node.js] ..)
+  - Dependency Injection ([Dagger](https://dagger.dev/), Spring IOC, Guice/Java)
+  - [Angular](https://angular.io/), [React](https://reactjs.org/), [Vue](https://vuejs.org/) (Fronted frameworks)
 
 ![frameworks](https://miro.medium.com/max/5600/1*rujr0xAqANInP9pdzXZcsw.png)
 
@@ -68,8 +68,8 @@ class Student {
   Usually, these are termed as "platform".
   e.g. [Tuya](https://en.tuya.com/) is IoT platform
 
-- **Opinionated Framework** implements or enforces you to implement a certain kind of practices. 
-  If domain level then it compels to implement industry practices. 
+- **Opinionated Framework** implements or enforces you to implement a certain kind of practices.   
+  If domain level then it compels to implement industry practices.  
   If technical level then it enforces best practices of development.
 
 - **Non-opinionated Framework** - Probably, you guess it. These do not bind you to any practice. You are free to implement your way of doing things. Example: Express (JS@Node)
