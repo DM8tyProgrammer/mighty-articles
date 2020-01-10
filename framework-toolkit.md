@@ -54,6 +54,10 @@ class Student {
 }
 ```
 
+### Framework Categorization
+
+#### Scope Based
+
 - **Technical Level Frameworks** are focused on providing technical problems solutions. They are smaller in scope, thus permits you an option to combine with multiple frameworks to write an application.
   Typical Examples
 
@@ -67,6 +71,8 @@ class Student {
 - **Domain-Level Frameworks** are focused on business or domain level solutions. These are broader in scope than technical level frameworks. 
   Usually, these are termed as "platform".
   e.g. [Tuya](https://en.tuya.com/) is IoT platform
+
+#### Practice Based
 
 - **Opinionated Framework** implements or enforces you to implement a certain kind of practices.   
   If domain level then it compels to implement industry practices.  
