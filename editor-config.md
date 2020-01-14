@@ -2,8 +2,9 @@
 title: 'Level 0 - Coding Standard with EditorConfig'
 description: 'Editor Config, an INI format based configuration system that let you establish project level coding standard; It allows configuring: indentation style, indentation size, line width and more'
 image: 'https://themightyprogrammer.dev/post/editor-config.jpg'
-keywords: 'coding standard, editor config, consistent coding standard, editor config guide, editorconfig tutorial'
-datePublished: '2020-06-2020'
+keywords: 'coding standard, editor config, consistent coding standard, editor config guide, editorconfig tutorial, editorconfig linewidth, editorconfig indentsize, intellj editorconfig'
+datePublished: '2020-01-06'
+lastModified: '2020-01-14'
 ---
 
 [Editor Config](https://editorconfig.org), an INI¹ format based configuration system that let you establish project level coding standard; It allows configuring: indentation style, indentation size, line width and more. It helps in reducing the effort required to bring each team member to the consistent coding standing by automatically applying the config to IDE.
@@ -36,15 +37,15 @@ The above process brings up:
 
 ## EditorConfig saves your time by:
 
-- **Enabling Auto Import**: Whenever there is change, commit in .editorconfig file and supported IDEs automatically apply changes.
+- **Enabling Auto Import**: Whenever there are changes in configuration, commit the corresponding rules in `.editorconfig` file and supported IDEs automatically apply changes.
 - **IDE agnostic** : EditorConfig is available to multiple IDEs. 
   Some IDE inherently support EditorConfig; some might require external plugins. It might be that your IDE might not support all the properties. Check the IDE documentation for details.
 
 ## In action
 
-You create a file named `.editorconfig` in your project root. The file is collections of rules; each rule is simple key-value pair separated by `=`.
+You create a file named `.editorconfig` in your project root and don't forget to commit the file!
 
-The first rule you write:
+The file is collections of rules; each rule is simple key-value pair separated by `=`. The first rule you write:
 
 ```ini
 root = true
