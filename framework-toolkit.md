@@ -3,6 +3,7 @@ title: 'Library - Framework and Toolkit'
 subtitle: 'Shareable Code aspects'
 image: https://miro.medium.com/max/5600/1*rujr0xAqANInP9pdzXZcsw.png
 datePublished: '2018-01-25'
+lastModified: '2019-01-14'
 ---
 
 These days software applications are complex in their functions. It is an arduous task to build an application on top of all own handwritten code, and it is not advisable.
