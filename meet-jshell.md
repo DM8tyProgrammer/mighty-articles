@@ -1,9 +1,11 @@
 ---
 title: Meet JShell - Java REPL tool
+subtitle: 'Java Fiddler'
 description: Jshell is a new tool in Java ecosystem to quickly play or experiment with Java code.
 keywords: 'java, jshell, jshell variables, jshell save session, jshell exit, jshell start, how to start jshell, jshell help, jshell edit'
 image: https://cdn-images-1.medium.com/max/1600/1*VtOc8W-xR2iy8hHRUkZZJw.png
 datePublished: '2017-09-03'
+lastModified: '2019-01-26'
 ---
 
 JShell is one of the new addition to JDK system since Java 9.
