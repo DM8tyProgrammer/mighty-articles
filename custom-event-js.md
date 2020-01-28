@@ -33,7 +33,7 @@ In general, **Publisher-Subscriber** or **PubSub** term is used collectively for
 
 Reactive Programming is a trending paradigm² these days. It is the processing of streams of data asynchronously. At core, reactive streams are written on top of the event-driven paradigm (?). You are going to build an event notification model on top of it by modelling events as a stream of data.
 
-[RxJS]() is a <b>r</b>eactive programming e<b>x</b>tension for <b>J</b>ava<b>s</b>cript.
+[RxJS](https://rxjs-dev.firebaseapp.com/) is a <b>r</b>eactive programming e<b>x</b>tension for <b>J</b>ava<b>s</b>cript.
 
 ---
 
@@ -52,7 +52,7 @@ Consider class Thermostat which encapsulates the logic of monitoring and publish
 
 ### Data Structure for holding event structure
 
-RxJS offers Subject which can be used to emit events to multiple subscribers.
+RxJS offers `Subject` which can be used to emit events to multiple subscribers.
 
 ```js
 class Thermostat {
