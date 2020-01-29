@@ -10,7 +10,7 @@ lastModified: '2020-01-29'
 
 Event-Based Programming is natural to any GUI based interface. HTML DOM¹ offers inbuilt Event Notification model, but **_it is only useful when you are dealing with DOM Elements._** There is no support for non-DOM elements.
 
-Web applications have grown up in complexity with time; also, Javascript started participating in backend applications; which in turn made the world to see Javascript to more than HTML DOM manipulation gig.
+Web applications have grown up in complexity with time; also, Javascript started participating in backend applications; which in turn made the world to see Javascript as more than HTML DOM manipulation gig.
 
 _This article showcases building up custom event publisher-subscriber model on top of Reactive Programming for non-DOM elements._
 
