@@ -5,7 +5,7 @@ description: 'Editor Config, an INI format based configuration system that let y
 image: 'https://themightyprogrammer.dev/post/editor-config.jpg'
 keywords: 'coding standard, editor config, consistent coding standard, editor config guide, editorconfig tutorial, editorconfig linewidth, editorconfig indentsize, intellj editorconfig'
 datePublished: '2020-01-06'
-lastModified: '2020-01-26'
+lastModified: '2020-02-01'
 ---
 
 [Editor Config](https://editorconfig.org), an INI¹ format based configuration system that let you establish project level coding standard; It allows configuring: indentation style, indentation size, line width and more. It helps in reducing the effort required to bring each team member to the consistent coding standing by automatically applying the config to IDE.
@@ -34,13 +34,14 @@ The above process brings up:
 
 - **Manual Work**: Any change in the code standard; all the process of reimporting has to be repeated. It involves manual work and bringing each one IDE on the same page is difficult. Coding standard itself is a long-discussed collective agreement, and then there is manual work; It is an invisible pain of a developer.
 
-- **Single Typed IDE**: All of your team members might not be using the same IDE. Consequently, you have to write and maintain multiple configuration files for IDEs being in use, or all your team members have to use the same variant of IDE.
+- **IDE Inflexibility**: All of your team members might not be using the same IDE. Consequently, you have to write and maintain multiple configuration files for IDEs being in use, or all your team members have to use the same variant of IDE.
 
 ## EditorConfig saves your time by:
 
 - **Enabling Auto Import**: Whenever there are changes in configuration, commit the corresponding rules in `.editorconfig` file and supported IDEs automatically apply changes.
-- **IDE agnostic** : EditorConfig is available to multiple IDEs. 
-  Some IDE inherently support EditorConfig; some might require external plugins. It might be that your IDE might not support all the properties. Check the IDE documentation for details.
+
+- **IDE Flexibility** : EditorConfig is available to multiple IDEs.
+  Some IDE inherently supports EditorConfig; some might require external plugins. It might be that your IDE might not support all the properties. Check the IDE documentation for details.
 
 ## In action
 

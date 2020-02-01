@@ -123,7 +123,7 @@ thermostat.on('above', (t) => {
 })
 ```
 
-Wiring all pieces together.
+Wiring all pieces together. A simulation is build:
 
 <iframe
      src="https://codesandbox.io/embed/custom-event-rxjs-ho0n5?fontsize=14&theme=light&view=preview"
@@ -132,6 +132,7 @@ Wiring all pieces together.
      allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
      sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
    ></iframe>
+<figcaption>Try increasing or decreasing temperature.</figcaption>
 
 ## Fiddling
 
