@@ -5,7 +5,7 @@ tags: rxjs, javascript
 description: 'Building up Publisher-subscriber event model on top of RxJS.'
 image: 'https://themightyprogrammer.dev/post/custom-event.jpg'
 datePublished: '2020-01-29'
-lastModified: '2020-01-29'
+lastModified: '2020-02-02'
 ---
 
 Event-Based Programming is natural to any GUI based interface. HTML DOM¹ offers inbuilt Event Notification model, but **_it is only useful when you are dealing with DOM Elements._** There is no support for non-DOM elements.
@@ -31,9 +31,8 @@ In general, **Publisher-Subscriber** or **PubSub** term is used collectively for
 
 ### Reactive Programming
 
-Reactive Programming is a trending paradigm² these days. It is the processing of streams of data asynchronously. At core, reactive streams are written on top of the event-driven paradigm (?). You are going to build an event notification model on top of it by modelling events as a stream of data.
-
-[RxJS](https://rxjs-dev.firebaseapp.com/) is a <b>r</b>eactive programming e<b>x</b>tension for <b>J</b>ava<b>s</b>cript.
+Reactive Programming is a trending paradigm² these days. It is the processing of streams of data asynchronously.
+[RxJS](https://rxjs-dev.firebaseapp.com/) is a <b>r</b>eactive programming e<b>x</b>tension for <b>J</b>ava<b>s</b>cript. You are going to build an event notification model on top of it by modelling events as a stream of data.
 
 ---
 
