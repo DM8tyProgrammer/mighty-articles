@@ -5,7 +5,8 @@ description: Jshell is a new tool in Java ecosystem to quickly play or experimen
 keywords: 'java, jshell, jshell variables, jshell save session, jshell exit, jshell start, how to start jshell, jshell help, jshell edit'
 image: https://cdn-images-1.medium.com/max/1600/1*VtOc8W-xR2iy8hHRUkZZJw.png
 datePublished: '2017-09-03'
-lastModified: '2019-01-26'
+lastModified: '2020-02-02'
+tags: 'java, tutorial'
 ---
 
 JShell is one of the new addition to JDK system since Java 9.

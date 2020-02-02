@@ -1,8 +1,11 @@
 ---
 title: Squashing git commit
+subtitle: 'Hide your sins by combining commits'
 description: Git allows rewriting history to have a clean version. Rebase command that enables you to clean up the frequents commits by offering to squash.
 keywords: git, git squash, git clean history, git rewrite history, rebase, squash commit
 datePublished: '2018-06-17'
+lastModified: '2020-02-02'
+tags: 'git, tutorial'
 ---
 
 Git is a leading version control software (VCS). There may be a time in your experience when you have to commit very often with a small change.
