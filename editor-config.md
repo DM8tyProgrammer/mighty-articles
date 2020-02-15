@@ -5,7 +5,8 @@ description: 'Editor Config, an INI format based configuration system that let y
 image: 'https://themightyprogrammer.dev/post/editor-config.jpg'
 keywords: 'coding standard, editor config, consistent coding standard, editor config guide, editorconfig tutorial, editorconfig linewidth, editorconfig indentsize, intellj editorconfig'
 datePublished: '2020-01-06'
-lastModified: '2020-02-01'
+lastModified: '2020-02-15'
+tags: Coding standand
 ---
 
 [Editor Config](https://editorconfig.org), an INI¹ format based configuration system that let you establish project level coding standard; It allows configuring: indentation style, indentation size, line width and more. It helps in reducing the effort required to bring each team member to the consistent coding standing by automatically applying the config to IDE.
@@ -16,11 +17,11 @@ Whenever we work in a team, we set up some ground rules to work efficiently; in 
 
 Coding standards may include:
 
-**Level 0**  -  Universal file text configuration: indentation style, line width, line ending, indentation size.
+**Level 0**  -  Universal File configuration: indentation style, line width, line ending, indentation size.
 
-**Level 1**  -  Programming languages based: block style, comment style, method naming, class naming.
+**Level 1**  -  Programming languages based configuration: block style, comment style, method naming, class naming.
 
-**Level 2**  -  Project Level Workflow: the process regarding development to deployment. It is more of the management side.
+**Level 2**  -  Project Level Workflow configuration: the process regarding development to deployment. It is more of the management side.
 
 **_EditorConfig does support all of level-0 and some of level-1 configuration. Level 2 is out of scope for it (?)._**
 
