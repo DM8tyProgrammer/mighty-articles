@@ -5,7 +5,7 @@ description: 'Editor Config, an INI format based configuration system that let y
 image: 'https://themightyprogrammer.dev/post/editor-config.jpg'
 keywords: 'coding standard, editor config, consistent coding standard, editor config guide, editorconfig tutorial, editorconfig linewidth, editorconfig indentsize, intellj editorconfig'
 datePublished: '2020-01-06'
-lastModified: '2020-02-15'
+lastModified: '2020-02-19'
 tags: Coding standand
 ---
 
@@ -58,9 +58,11 @@ It is a declaration that the current file is root `.editorconfig` file.
 
 By design, editor config engine/interpreter searches for `.editorconfig` file in the open directory and its all parents' directories till it find `.editorconfig` with `root = true`.
 
-### Apply properties to files
+### Apply rules to files
 
 You can apply rules to all files or a set of files. It supports glob patterns² to target files.
+
+The following snippet applies rules to all the files in the project.
 
 ```ini
 # apply rules to all files
@@ -72,16 +74,22 @@ line_width = 110
 charset = utf-8
 ```
 
+### Overriding Rules
+
 EdiorConfig files are read from top to bottom. It means the latest rule is considered the final applicable rule and this can be used to override properties.
+
+Consider, you want to override Indention size (`indent_size`) to `4` for yaml files and keeping all the rest rules.
 
 ```ini
 [*.yml]
-indent_size = 2
+indent_size = 4
 
 # yaml would get all value with overridden indent_size
 ```
 
-By combing all, a typical file look like as:
+YAML files would be constrained by all rules (defined in the previous section for `[*]` all files) and with overridden Indention size.
+
+A typical file be:
 
 ```ini
 root = true
