@@ -4,22 +4,22 @@ subtitle: 'Tools of Object Oriented Programming'
 description: Choosing between composition and inheritance is hard. Composition and Inheritance are the building blocks of an application structure. It is imperative to know when to use which one.
 keywords: inheritance vs composition, object oriented programming, software engineering, inheritance, composition, inheritance in java, inheritance in kotlin
 datePublished: '2019-09-14'
-lastModified: '2019-01-26'
+lastModified: '2019-03-01'
 ---
 
 With the introduction of OOPs, Inheritance and Composition entered our senses and still confusing us.
 
-Choosing between Composition and Inheritance is not easy. Often, the decision depends upon the information which is not yet there.
+Choosing between _Composition_ and _Inheritance_ is not easy. Often, the decision depends upon the information which is not yet there.
 
 The structure of an application plays an essential role in adding changes. Composition and Inheritance are the building blocks of an application structure. It is imperative to know when to use which one.
 
-## Definition
+# Definition
 
-### Inheritance
+## Inheritance
 
-_Inheritance_ is a way of reusing code by inheriting the structure from the referred Class. The referring Class is called subclass and referred Class is called parent/super/base class.
+_Inheritance_ is a way of reusing code by inheriting the structure from the referred class or Type. The referred class is called `parent` or `base` class and the referring class is called `child` or `subclass`.
 
-_Inheriting the structure_ suggests that Subclass inherits API (public members) of the parent class. Subclass can also override the parent class methods or add more methods.
+_Inheriting the structure_ suggests that subclass inherits public members (API) of the parent class. A subclass can override or add new behaviour or extend the existing behaviour of the parent class.
 
 ```kotlin
 // Reference class
@@ -27,22 +27,32 @@ class Animal {
    fun walk() {
      println("animal walk");
    }
+
+   fun speak() {
+      println("...")
+   }
 }
 
 // Referring Class
 // Cat class "inherits the structure" from the Animal class
 class Cat : Animal {
+
+   // overriding existing behaviour
+   fun speak() {
+      println("meow")
+   }
 }
 
 
 // in main
 val cat = Cat();
 cat.walk() // Cat can "reuse" parent class behavior
+cat.speak() // meow
 ```
 
-### Composition
+## Composition
 
-_Composition_ is a way of reusing code by interacting with the referred class _without any structural imposition_.
+**Composition** is a way of reusing code by interacting with the referred class _without any structural imposition_.
 
 ```kotlin
 // Reference Class
@@ -62,9 +72,9 @@ class Shape (val sides: Array<Line>) {
 }
 ```
 
-## Decision Matrix
+# Decision Matrix
 
-### Uniformity
+## Uniformity
 
 I had a situation to ignore JsonNaming annotation¹ provided by Jackson library (Java ecosystem). There is no direct API provided by the library to facilitate the same.
 
@@ -109,24 +119,24 @@ If I preferred to go with Composition, I would have to implement unnecessary met
 
 Imagine, If in future, library developers add new behaviours to the referred Class, I would end up changing in the latest Class to have structural similarity.
 
-### Semantics
+## Semantics
 
 Inheritance and Composition not only allow to reuse the code; they also define a relationship semantic between two classes.
 
 ```
-Inheritance :  is-a
+Inheritance : is-a
 Composition : has-* (* means any quantifier)
 ```
 
-Apple _is a_ Fruit. (Inheritance)  
+Apple _is a_ Fruit. (Inheritance)
 Apple _has_ seeds. (Composition)
 
-Human _is a_ mammal. (Inheritance)  
-Human _has_ two hands. (Composition)
+Human _is a_ mammal. (Inheritance)
+Human _has two_ hands. (Composition)
 
 These keywords assist in basic analysing the requirements.
 
-### Software Model: OOA/D
+## Software Model: OOA/D
 
 Whenever we write software, we introduce so many concepts from Specification and Implementation point of view.
 
@@ -139,7 +149,7 @@ e.g. RestClient, EmailService, ValidtorFactory
 
 Sometimes, it is better to start with code at first, then evolve the design. You are free to play until the first release. Once the software is released, it is hard to reverse most of the decisions.
 
-#### Multiple Concepts
+### Multiple Concepts
 
 Inheritance does not befit well for multi-dimensions concepts or variants or attributes. If applied, it leads to Combinatorial Explosion of classes.
 
@@ -190,7 +200,9 @@ class Topping(val price: Int) {
 }
 ```
 
-## Takeaways
+---
+
+# Takeaways
 
 - In Inheritance, the structure imposition introduces tight coupling between both connected classes; it restricts their future editing.
 - Inheritance is well suited for uniformity.
@@ -199,7 +211,7 @@ class Topping(val price: Int) {
 
 ---
 
-## References
+# References
 
-1. Disable specific annotation in Jackson  
+1. Disable specific annotation in Jackson
    https://github.com/FasterXML/jackson-databind/issues/133
