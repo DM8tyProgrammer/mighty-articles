@@ -141,7 +141,8 @@ Any variation you make with the above code itself a pattern:
 - If the event holds enough information that Event-Listener doesn't look back to Event-Emitter; it is **Event Carried State Transfer** pattern
 - If you store all events in datastore, it is **Event Sourcing** pattern _(possible for backend side)_.
 - If there is a network partition between Event Publisher and Event Subscriber, then collectively, it is a **Reactive System**. It is build using queuing technologies _(possible for backend side)_.
-- An event may contain, reference or link back to its source; it is **Source Aware Event** pattern. In HTML DOM, each event has a field named target to point back to its source.
+- An event may contain, reference or link back to its source; it is **Source Aware Event** pattern.  
+  In HTML DOM, each event has a field named `target` to point back to its source.
 
 ## Footnotes
 
