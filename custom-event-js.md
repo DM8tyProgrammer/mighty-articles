@@ -5,7 +5,7 @@ tags: rxjs, javascript
 description: 'Building up Publisher-subscriber event model on top of RxJS.'
 image: 'https://themightyprogrammer.dev/post/custom-event.jpg'
 datePublished: '2020-01-29'
-lastModified: '2020-02-02'
+lastModified: '2020-03-06'
 ---
 
 Event-Based Programming is natural to any GUI based interface. HTML DOM¹ offers inbuilt Event Notification model, but **_it is only useful when you are dealing with DOM Elements._** There is no support for non-DOM elements.
@@ -44,7 +44,7 @@ Consider modelling Thermostat, when room temperature crosses a certain threshold
 
 ### Design
 
-Consider class Thermostat which encapsulates the logic of monitoring and publishes events:
+Consider class `Thermostat` which encapsulates the logic of monitoring and publishes events:
 
 - `above`: when temperature crossed above 30°C _(threshold)_ from lower value.
 - `below`: when temperature crossed below or equal to 30°C _(threshold)_ from higher value.
@@ -137,12 +137,11 @@ Wiring all pieces together. A simulation is build:
 
 Any variation you make with the above code itself a pattern:
 
-- Keeping event subscription data in the mediator class of Event-Emitter and Event-Listener is in-memory Event Bus pattern.
-- If the event holds enough information that Event-Listener doesn't look back to Event-Emitter; it is Event Carried State Transfer pattern
-- If you store all events in datastore, it is Event Sourcing pattern _(possible for backend side)_.
-- If there is a network partition between Event Publisher and Event Subscriber, then collectively, it is a Reactive System. It is build using queuing technologies _(possible for backend side)_.
-
-An event may contain, reference or link back to its source. In HTML DOM, each event has a field named target to point back to its source.
+- Keeping event subscription data in the mediator class of Event-Emitter and Event-Listener is **in-memory Event Bus** pattern.
+- If the event holds enough information that Event-Listener doesn't look back to Event-Emitter; it is **Event Carried State Transfer** pattern
+- If you store all events in datastore, it is **Event Sourcing** pattern _(possible for backend side)_.
+- If there is a network partition between Event Publisher and Event Subscriber, then collectively, it is a **Reactive System**. It is build using queuing technologies _(possible for backend side)_.
+- An event may contain, reference or link back to its source; it is **Source Aware Event** pattern. In HTML DOM, each event has a field named target to point back to its source.
 
 ## Footnotes
 

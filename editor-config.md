@@ -5,7 +5,7 @@ description: 'Editor Config, an INI format based configuration system that let y
 image: 'https://themightyprogrammer.dev/post/editor-config.jpg'
 keywords: 'coding standard, editor config, consistent coding standard, editor config guide, editorconfig tutorial, editorconfig linewidth, editorconfig indentsize, intellj editorconfig'
 datePublished: '2020-01-06'
-lastModified: '2020-02-19'
+lastModified: '2020-03-06'
 tags: Coding standand
 ---
 
@@ -29,7 +29,7 @@ Coding standards may include:
 
 Many IDEs provide a mechanism for code formatting configuration. This configuration can be exported to a file in an IDE specific file.
 
-Someone in your team configures and the exported file within the team to avoid rework by them. Team members import the configuration file into their IDE. Thus, the code standard is shared and applied.
+Someone in your team configures; share configuration file within the team to avoid rework by them. Team members import the configuration file into their IDE. Thus, the code standard is shared and applied.
 
 The above process brings up:
 
@@ -109,23 +109,35 @@ indent_size = 4 #override the size 2 for 4
 curly_bracket_next_line = true
 ```
 
+### Other Useful Rules
+
+| Rule                    | Description                   |
+| ----------------------- | ----------------------------- |
+| end_of_line             | line separator                |
+| max_line_length         | line width                    |
+| spaces_around_operators | space around binary operators |
+| indent_brace_style      | L1- block brace style         |
+
 Check out the [official docs](https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties) to know full supported rules.
 
 ---
 
+### IDE Specific Rules
+
 IDEs have been started supporting their custom rules.
+
 [IntelliJIdea](https://www.jetbrains.com/help/idea/configuring-code-style.html) supports the following rules:
 
-```ini
-ij_visual_guides
-ij_formatter_off_tag
-ij_formatter_on_tag
-ij_formatter_tags_enabled
-ij_wrap_on_typing
-ij_continuation_indent_size
-ij_smart_tabs
-ij_java_blank_lines_after_imports
-```
+| Rule                              | Description                                                                |
+| --------------------------------- | -------------------------------------------------------------------------- |
+| ij_visual_guides                  | Visual Guide Position                                                      |
+| ij_formatter_off_tag              | comment to mark formatter off Default: `// @formatter:off`                 |
+| ij_formatter_on_tag               | comment to mark formatter on Default: `// @formatter:off`                  |
+| ij_formatter_tags_enabled         | enable or disable the above formatter tags                                 |
+| ij_wrap_on_typing                 | enable or disable wrapping while typing                                    |
+| ij_continuation_indent_size       | array elements, method chaining indentation size if continued to next line |
+| ij_smart_tabs                     | enable or disable smart tabs                                               |
+| ij_java_blank_lines_after_imports | enable or disableAfter import line                                         |
 
 Using these rules would defeat the whole purpose of EditorConfig (:think).
 
