@@ -124,9 +124,7 @@ Check out the [official docs](https://github.com/editorconfig/editorconfig/wiki/
 
 ### IDE Specific Rules
 
-IDEs have been started supporting their custom rules.
-
-[IntelliJIdea](https://www.jetbrains.com/help/idea/configuring-code-style.html) supports the following rules:
+IDEs have been started supporting their custom rules. [IntelliJIdea](https://www.jetbrains.com/help/idea/configuring-code-style.html) supports the following rules:
 
 | Rule                              | Description                                                                |
 | --------------------------------- | -------------------------------------------------------------------------- |
