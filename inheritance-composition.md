@@ -4,7 +4,7 @@ subtitle: 'Tools of Object Oriented Programming'
 description: Choosing between composition and inheritance is hard. Composition and Inheritance are the building blocks of an application structure. It is imperative to know when to use which one.
 keywords: inheritance vs composition, object oriented programming, software engineering, inheritance, composition, inheritance in java, inheritance in kotlin
 datePublished: '2019-09-14'
-lastModified: '2019-03-01'
+lastModified: '2020-03-07'
 ---
 
 With the introduction of OOPs, Inheritance and Composition entered our senses and still confusing us.
@@ -12,8 +12,6 @@ With the introduction of OOPs, Inheritance and Composition entered our senses an
 Choosing between _Composition_ and _Inheritance_ is not easy. Often, the decision depends upon the information which is not yet there.
 
 The structure of an application plays an essential role in adding changes. Composition and Inheritance are the building blocks of an application structure. It is imperative to know when to use which one.
-
-# Definition
 
 ## Inheritance
 
@@ -128,10 +126,10 @@ Inheritance : is-a
 Composition : has-* (* means any quantifier)
 ```
 
-Apple _is a_ Fruit. (Inheritance)
+Apple _is a_ Fruit. (Inheritance)  
 Apple _has_ seeds. (Composition)
 
-Human _is a_ mammal. (Inheritance)
+Human _is a_ mammal. (Inheritance)  
 Human _has two_ hands. (Composition)
 
 These keywords assist in basic analysing the requirements.
@@ -153,7 +151,7 @@ Sometimes, it is better to start with code at first, then evolve the design. You
 
 Inheritance does not befit well for multi-dimensions concepts or variants or attributes. If applied, it leads to Combinatorial Explosion of classes.
 
-Say, you are modelling Pizza (concept 1) with two allowed Toppings (concept 2) Onion and Tomato. If you choose Inheritance to connect Pizza and Topping, then you would end with four classes.
+Say, you are modelling Pizza _(concept 1)_ with two allowed Toppings _(concept 2)_ Onion and Tomato. If you choose Inheritance to connect Pizza and Topping, then you would end with four classes.
 
 ```kotlin
 // with inheritance
