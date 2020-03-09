@@ -5,7 +5,7 @@ description: 'Editor Config, an INI format based configuration system that let y
 image: 'https://themightyprogrammer.dev/post/editor-config.jpg'
 keywords: 'coding standard, editor config, consistent coding standard, editor config guide, editorconfig tutorial, editorconfig linewidth, editorconfig indentsize, intellj editorconfig'
 datePublished: '2020-01-06'
-lastModified: '2020-03-06'
+lastModified: '2020-03-10'
 tags: Coding standand
 ---
 
@@ -124,7 +124,7 @@ Check out the [official docs](https://github.com/editorconfig/editorconfig/wiki/
 
 ### IDE Specific Rules
 
-IDEs have been started supporting their custom rules. [IntelliJIdea](https://www.jetbrains.com/help/idea/configuring-code-style.html) supports the following rules:
+IDEs have been started supporting their custom rules. [IntelliJIdea](https://www.jetbrains.com/help/idea/configuring-code-style.html) introduces rules these are prefix by `ij`
 
 | Rule                              | Description                                                                |
 | --------------------------------- | -------------------------------------------------------------------------- |
@@ -136,10 +136,22 @@ IDEs have been started supporting their custom rules. [IntelliJIdea](https://www
 | ij_continuation_indent_size       | array elements, method chaining indentation size if continued to next line |
 | ij_smart_tabs                     | enable or disable smart tabs                                               |
 | ij_java_blank_lines_after_imports | enable or disableAfter import line                                         |
+| .                                 | .                                                                          |
+| .                                 | .                                                                          |
 
-Using these rules would defeat the whole purpose of EditorConfig (:think).
+[Visual Studio](https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference?view=vs-2019) also supports customised rules.
 
----
+| Rule                                                                                                                  | Description |
+| --------------------------------------------------------------------------------------------------------------------- | ----------- |
+| dotnet_style_qualification_for_field                                                                                  | -           |
+| dotnet_style_require_accessibility_modifiers                                                                          | -           |
+| dotnet_style_collection_initializer                                                                                   | -           |
+| dotnet_style_coalesce_expression                                                                                      | -           |
+| .                                                                                                                     | .           |
+| .                                                                                                                     | .           |
+| and [more](https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference?view=vs-2019) |
+
+> If you are using IDE specific rules, you relinquish IDE flexibility benefit and automation benefit stay.
 
 EditorConfig saves your team time by automatically importing configuration. It helps in reducing the effort to bring each team member to the same definition of coding standard whenever there is a change in "code standard".
 

@@ -5,7 +5,7 @@ tags: rxjs, javascript
 description: 'Building up Publisher-subscriber event model on top of RxJS.'
 image: 'https://themightyprogrammer.dev/post/custom-event.jpg'
 datePublished: '2020-01-29'
-lastModified: '2020-03-06'
+lastModified: '2020-03-10'
 ---
 
 Event-Based Programming is natural to any GUI based interface. HTML DOM¹ offers inbuilt Event Notification model, but **_it is only useful when you are dealing with DOM Elements._** There is no support for non-DOM elements.
@@ -33,8 +33,6 @@ In general, **Publisher-Subscriber** or **PubSub** term is used collectively for
 
 Reactive Programming is a trending paradigm² these days. It is the processing of streams of data asynchronously.
 [RxJS](https://rxjs-dev.firebaseapp.com/) is a <b>r</b>eactive programming e<b>x</b>tension for <b>J</b>ava<b>s</b>cript. You are going to build an event notification model on top of it by modelling events as a stream of data.
-
----
 
 ## In Action
 
@@ -69,7 +67,7 @@ Notice, there are two `Subject` objects. You can also create a single `Subject` 
 
 ### Subscription API for Event
 
-`on` API for register action based upon event.
+`on` API for register action based upon event. `Subject` offers `subscribe` API which would be called whenever there is new data is available.
 
 ```js
 on(event, action) {
@@ -77,6 +75,8 @@ on(event, action) {
   this.subscriptions[event].subscribe(v => action(v));
 }
 ```
+
+Whenever `next` is called the `on` API would be triggered; by design, callback would be called.
 
 ### Publishing Events
 
@@ -108,7 +108,7 @@ Consider `monitor` method which detects the rise and falls in temperature and pu
 
 ### Subscribing for event 
 
-When the temperature is below 30°C then ac should go off, and the window should open; the opposite should happen for above event 30°C.
+When the temperature is below `30°C` then ac should go off, and the window should open; the opposite should happen for above event `30°C`.
 
 ```js
 thermostat.on('below', (t) => {
@@ -141,13 +141,12 @@ Any variation you make with the above code itself a pattern:
 - If the event holds enough information that Event-Listener doesn't look back to Event-Emitter; it is **Event Carried State Transfer** pattern
 - If you store all events in datastore, it is **Event Sourcing** pattern _(possible for backend side)_.
 - If there is a network partition between Event Publisher and Event Subscriber, then collectively, it is a **Reactive System**. It is build using queuing technologies _(possible for backend side)_.
-- An event may contain, reference or link back to its source; it is **Source Aware Event** pattern.  
-  In HTML DOM, each event has a field named `target` to point back to its source.
+- An event may contain, reference or link back to its source; it is **Source Aware Event** pattern. In HTML DOM, each event has a field named `target` to point back to its source.
 
 ## Footnotes
 
-- <b>D</b>ocument <b>O</b>bject <b>M</b>odel is the parsed tree object representation of HTML document.
-- A paradigm is a conceptual view of programming elements.
+1. <b>D</b>ocument <b>O</b>bject <b>M</b>odel is the parsed tree object representation of HTML document.
+2. A paradigm is a conceptual view of programming elements.
 
 ## More
 
