@@ -1,5 +1,6 @@
 ---
 title: 'Library - Framework and Toolkit'
+description: 'Frameworks and Toolkits are aspects of Libraries'
 subtitle: 'Shareable Code aspects'
 image: https://miro.medium.com/max/5600/1*rujr0xAqANInP9pdzXZcsw.png
 datePublished: '2018-01-25'
