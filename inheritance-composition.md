@@ -70,8 +70,6 @@ class Shape (val sides: Array<Line>) {
 }
 ```
 
-# Decision Matrix
-
 ## Uniformity
 
 I had a situation to ignore JsonNaming annotation¹ provided by Jackson library (Java ecosystem). There is no direct API provided by the library to facilitate the same.
