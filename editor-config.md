@@ -56,7 +56,7 @@ root = true
 
 It is a declaration that the current file is root `.editorconfig` file.
 
-By design, editor config engine/interpreter searches for `.editorconfig` file in the open directory and its all parents' directories till it find `.editorconfig` with `root = true`.
+By design, editor config engine searches for `.editorconfig` file in the current working directory and its all parents' directories till it find `.editorconfig` with `root = true` and merge all the found configurations.
 
 ### Apply rules to files
 
@@ -87,7 +87,7 @@ indent_size = 4
 # yaml would get all value with overridden indent_size
 ```
 
-YAML files would be constrained by all rules (defined in the previous section for `[*]` all files) and with overridden Indention size.
+YAML files would be constrained by all rules (defined in the previous section for `[*]` all files) and with overridden _Indention Size_.
 
 A typical file be:
 

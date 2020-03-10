@@ -4,7 +4,7 @@ subtitle: 'Tools of Object Oriented Programming'
 description: Choosing between composition and inheritance is hard. Composition and Inheritance are the building blocks of an application structure. It is imperative to know when to use which one.
 keywords: inheritance vs composition, object oriented programming, software engineering, inheritance, composition, inheritance in java, inheritance in kotlin
 datePublished: '2019-09-14'
-lastModified: '2020-03-07'
+lastModified: '2020-03-10'
 ---
 
 With the introduction of OOPs, Inheritance and Composition entered our senses and still confusing us.
@@ -138,10 +138,9 @@ Whenever we write software, we introduce so many concepts from Specification and
 
 Through rigorous analysis, these concepts end up with numerous classes. Shaping these classes (object decomposition) and connecting these classes become our primary responsibility.
 
-```
-Implementation Concepts: Factory, Manager, Service, Client, Provider
-e.g. RestClient, EmailService, ValidtorFactory
-```
+> Implementation Concepts: Factory, Manager, Service, Client, Provider
+
+> e.g. RestClient, EmailService, ValidtorFactory
 
 Sometimes, it is better to start with code at first, then evolve the design. You are free to play until the first release. Once the software is released, it is hard to reverse most of the decisions.
 
