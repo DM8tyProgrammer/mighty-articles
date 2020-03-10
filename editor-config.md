@@ -33,9 +33,9 @@ Someone in your team configures; share configuration file within the team to avo
 
 The above process brings up:
 
-- **Manual Work**: Any change in the code standard; all the process of reimporting has to be repeated. It involves manual work and bringing each one IDE on the same page is difficult. Coding standard itself is a long-discussed collective agreement, and then there is manual work; It is an invisible pain of a developer.
+- **Manual Work**: Any change in the code standard; all the process of reimporting has to be repeated. It involves manual work and bringing each team-member on the same set of coding standard is difficult. Coding standard itself is a long-discussed collective agreement; It is an invisible pain of a developer.
 
-- **IDE Inflexibility**: All of your team members might not be using the same IDE. Consequently, you have to write and maintain multiple configuration files for IDEs being in use, or all your team members have to use the same variant of IDE.
+- **IDE Inflexibility**: All of your team members _might not_ be using the same variant of IDE. Consequently, you have to write and maintain multiple configuration files for IDEs being in use, or all your team members have to use the same variant of IDE.
 
 ## EditorConfig saves your time by:
 
@@ -67,8 +67,8 @@ The following snippet applies rules to all the files in the project.
 ```ini
 # apply rules to all files
 
-[*] # \* means all
-indent_style = space
+[*] # * means all
+indent_style = space #self explanatory
 indent_size = 2
 line_width = 110
 charset = utf-8
