@@ -119,10 +119,12 @@ Imagine, If in future, library developers add new behaviours to the referred Cla
 
 Inheritance and Composition not only allow to reuse the code; they also define a relationship semantic between two classes.
 
-```
-Inheritance : is-a
-Composition : has-* (* means any quantifier)
-```
+---
+
+Inheritance : is-a  
+Composition : has-_ (_ means any quantifier)
+
+---
 
 Apple _is a_ Fruit. (Inheritance)  
 Apple _has_ seeds. (Composition)
