@@ -5,7 +5,7 @@ description: 'Editor Config, an INI format based configuration system that let y
 image: 'https://themightyprogrammer.dev/post/editor-config.jpg'
 keywords: 'coding standard, editor config, consistent coding standard, editor config guide, editorconfig tutorial, editorconfig linewidth, editorconfig indentsize, intellj editorconfig'
 datePublished: '2020-01-06'
-lastModified: '2020-03-10'
+lastModified: '2020-03-15'
 tags: Coding standand
 ---
 
@@ -111,6 +111,8 @@ curly_bracket_next_line = true
 
 ### Other Useful Rules
 
+<div class="table-responsive">
+
 | Rule                    | Description                   |
 | ----------------------- | ----------------------------- |
 | end_of_line             | line separator                |
@@ -118,13 +120,17 @@ curly_bracket_next_line = true
 | spaces_around_operators | space around binary operators |
 | indent_brace_style      | L1- block brace style         |
 
+</div>
+
 Check out the [official docs](https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties) to know full supported rules.
 
 ---
 
 ### IDE Specific Rules
 
-IDEs have been started supporting their custom rules. [IntelliJIdea](https://www.jetbrains.com/help/idea/configuring-code-style.html) introduces rules these are prefix by `ij`
+IDEs have been started supporting their custom rules. [IntelliJIdea](https://www.jetbrains.com/help/idea/configuring-code-style.html) introduces rules prefixed by `ij`:
+
+<div class="table-responsive">
 
 | Rule                              | Description                                                                |
 | --------------------------------- | -------------------------------------------------------------------------- |
@@ -139,7 +145,11 @@ IDEs have been started supporting their custom rules. [IntelliJIdea](https://www
 | .                                 | .                                                                          |
 | .                                 | .                                                                          |
 
-[Visual Studio](https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference?view=vs-2019) also supports customised rules.
+</div>
+
+[Visual Studio](https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference?view=vs-2019) also supports customised rules:
+
+<div class="table-responsive">
 
 | Rule                                                                                                                  | Description |
 | --------------------------------------------------------------------------------------------------------------------- | ----------- |
@@ -150,6 +160,8 @@ IDEs have been started supporting their custom rules. [IntelliJIdea](https://www
 | .                                                                                                                     | .           |
 | .                                                                                                                     | .           |
 | and [more](https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference?view=vs-2019) |
+
+</div>
 
 > If you are using IDE specific rules, you relinquish IDE flexibility benefit and automation benefit stay.
 
