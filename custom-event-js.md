@@ -125,7 +125,7 @@ thermostat.on('above', (t) => {
 Wiring all pieces together. A simulation is build:
 
 <iframe
-     data-src="https://codesandbox.io/embed/custom-event-rxjs-ho0n5?fontsize=14&theme=light&view=preview"
+     src="https://codesandbox.io/embed/custom-event-rxjs-ho0n5?fontsize=14&theme=light&view=preview"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
      title="custom-event-rxjs"
      allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
