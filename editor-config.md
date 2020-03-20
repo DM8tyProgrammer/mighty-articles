@@ -5,15 +5,15 @@ description: 'Editor Config, an INI format based configuration system that let y
 image: 'https://themightyprogrammer.dev/post/editor-config.jpg'
 keywords: 'coding standard, editor config, consistent coding standard, editor config guide, editorconfig tutorial, editorconfig linewidth, editorconfig indentsize, intellj editorconfig'
 datePublished: '2020-01-06'
-lastModified: '2020-03-15'
+lastModified: '2020-03-21'
 tags: Coding standand
 ---
 
-[Editor Config](https://editorconfig.org), an INI¹ format based configuration system that let you establish project level coding standard; It allows configuring: indentation style, indentation size, line width and more. It helps in reducing the effort required to bring each team member to the consistent coding standing by automatically applying the config to IDE.
+[Editor Config](https://editorconfig.org), an INI¹ format based configuration system that let you establish project level coding standard; It allows configuring: indentation style, indentation size, line width and more. It helps in reducing the effort required to bring each team member to the consistent coding standard by automatically importing and applying the configuration to IDE.
 
 ## What is EditorConfig solving?
 
-Whenever we work in a team, we set up some ground rules to work efficiently; in the programming world, those ground rules are coding standard.
+Whenever we work in a team, we set up some ground rules to work efficiently; in the programming world, those ground rules are _coding standards_.
 
 Coding standards may include:
 
@@ -23,17 +23,17 @@ Coding standards may include:
 
 **Level 2**  -  Project Level Workflow configuration: the process regarding development to deployment. It is more of the management side.
 
-**_EditorConfig does support all of level-0 and some of level-1 configuration. Level 2 is out of scope for it (?)._**
+**_EditorConfig does support all of level-0 and some of level-1 configuration. Level 2 is out of scope for it (why?)._**
 
 ## Traditional Model of Coding Standard
 
 Many IDEs provide a mechanism for code formatting configuration. This configuration can be exported to a file in an IDE specific file.
 
-Someone in your team configures; share configuration file within the team to avoid rework by them. Team members import the configuration file into their IDE. Thus, the code standard is shared and applied.
+Traditionally, a team member configures; share configuration file within the team to avoid rework by other team members. Team members import the configuration file into their IDE. Thus, the code standard is shared and applied.
 
 The above process brings up:
 
-- **Manual Work**: Any change in the code standard; all the process of reimporting has to be repeated. It involves manual work and bringing each team-member on the same set of coding standard is difficult. Coding standard itself is a long-discussed collective agreement; It is an invisible pain of a developer.
+- **Manual Work**: Any change in code standards leads to repeat all the process of reimporting has to be repeated. It involves manual work and tracing each team member on the same set of coding standards is difficult. Coding standards themselves are a long-discussed collective agreement; It is an invisible pain of a developer.
 
 - **IDE Inflexibility**: All of your team members _might not_ be using the same variant of IDE. Consequently, you have to write and maintain multiple configuration files for IDEs being in use, or all your team members have to use the same variant of IDE.
 
@@ -41,7 +41,7 @@ The above process brings up:
 
 - **Enabling Auto Import**: Whenever there are changes in configuration, commit the corresponding rules in `.editorconfig` file and supported IDEs automatically apply changes.
 
-- **IDE Flexibility** : EditorConfig is available to multiple IDEs.
+- **IDE Flexibility**: EditorConfig is available to multiple IDEs.
   Some IDE inherently supports EditorConfig; some might require external plugins. It might be that your IDE might not support all the properties. Check the IDE documentation for details.
 
 ## In action
@@ -56,7 +56,7 @@ root = true
 
 It is a declaration that the current file is root `.editorconfig` file.
 
-By design, editor config engine searches for `.editorconfig` file in the current working directory and its all parents' directories till it find `.editorconfig` with `root = true` and merge all the found configurations.
+By design, editor config engine searches for `.editorconfig` file in the current working directory and its all parents' directories till it finds `.editorconfig` with `root = true` and merges all the found configurations.
 
 ### Apply rules to files
 
@@ -165,7 +165,7 @@ IDEs have been started supporting their custom rules. [IntelliJIdea](https://www
 
 > If you are using IDE specific rules, you are giving away IDE flexibility benefit 🙇.
 
-EditorConfig saves your team time by automatically importing configuration. It helps in reducing the effort to bring each team member to the same definition of coding standard whenever there is a change in "code standard".
+EditorConfig saves your team time by automatically importing configuration. It helps in reducing the effort to bring each team member to the same definition of coding standards whenever there is a change in code standards.
 
 ## Reference
 
