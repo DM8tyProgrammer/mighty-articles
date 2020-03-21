@@ -167,7 +167,7 @@ IDEs have been started supporting their custom rules. [IntelliJIdea](https://www
 
 ## Closing notes
 
-EditorConfig saves your team time by automatically importing configuration. It helps in reducing the effort to bring each team member to the same definition of coding standards whenever there is a change in code standards.
+EditorConfig saves your team time by automatically importing configuration. It helps in reducing the effort to bring each team member to the same definition of coding standards whenever there are changes in code standards.
 
 ## Reference
 
