@@ -54,13 +54,13 @@ The file is collections of rules; each rule is simple key-value pair separated b
 root = true
 ```
 
-It is a declaration that the current file is root `.editorconfig` file.
+It is a declaration that the current `.editorconfig` file is root file.
 
 By design, editor config engine searches for `.editorconfig` file in the current working directory and its all parents' directories till it finds `.editorconfig` with `root = true` and merges all the found configurations.
 
 ### Apply rules to files
 
-You can apply rules to all files or a set of files. It supports glob patterns² to target files.
+You can apply rules to all files or a set of files using glob patterns².
 
 The following snippet applies rules to all the files in the project.
 
@@ -164,6 +164,8 @@ IDEs have been started supporting their custom rules. [IntelliJIdea](https://www
 </div>
 
 > If you are using IDE specific rules, you are giving away IDE flexibility benefit 🙇.
+
+## Closing notes
 
 EditorConfig saves your team time by automatically importing configuration. It helps in reducing the effort to bring each team member to the same definition of coding standards whenever there is a change in code standards.
 
