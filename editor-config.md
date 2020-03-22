@@ -109,16 +109,12 @@ curly_bracket_next_line = true
 
 ### Other Useful Rules
 
-<div class="table-responsive">
-
 | Rule                    | Description                   |
 | ----------------------- | ----------------------------- |
 | end_of_line             | line separator                |
 | max_line_length         | line width                    |
 | spaces_around_operators | space around binary operators |
 | indent_brace_style      | L1- block brace style         |
-
-</div>
 
 Check out the [official docs](https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties) to know full supported rules.
 
@@ -127,8 +123,6 @@ Check out the [official docs](https://github.com/editorconfig/editorconfig/wiki/
 ### IDE Specific Rules
 
 IDEs have been started supporting their custom rules. [IntelliJIdea](https://www.jetbrains.com/help/idea/configuring-code-style.html) introduces rules prefixed by `ij`:
-
-<div class="table-responsive">
 
 | Rule                              | Description                                                                |
 | --------------------------------- | -------------------------------------------------------------------------- |
@@ -143,11 +137,7 @@ IDEs have been started supporting their custom rules. [IntelliJIdea](https://www
 | .                                 | .                                                                          |
 | .                                 | .                                                                          |
 
-</div>
-
 [Visual Studio](https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference?view=vs-2019) also supports customised rules:
-
-<div class="table-responsive">
 
 | Rule                                                                                                                  | Description |
 | --------------------------------------------------------------------------------------------------------------------- | ----------- |
@@ -158,8 +148,6 @@ IDEs have been started supporting their custom rules. [IntelliJIdea](https://www
 | .                                                                                                                     | .           |
 | .                                                                                                                     | .           |
 | and [more](https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference?view=vs-2019) |
-
-</div>
 
 > If you are using IDE specific rules, you are giving away IDE flexibility benefit 🙇.
 
