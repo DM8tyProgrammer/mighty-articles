@@ -5,7 +5,7 @@ description: 'Editor Config, an INI format based configuration system that let y
 image: 'https://themightyprogrammer.dev/post/editor-config.jpg'
 keywords: 'coding standard, editor config, consistent coding standard, editor config guide, editorconfig tutorial, editorconfig linewidth, editorconfig indentsize, intellj editorconfig'
 datePublished: '2020-01-06'
-lastModified: '2020-03-21'
+lastModified: '2020-03-22'
 tags: Coding standand
 ---
 
@@ -60,9 +60,7 @@ By design, editor config engine searches for `.editorconfig` file in the curren
 
 ### Apply rules to files
 
-You can apply rules to all files or a set of files using glob patterns².
-
-The following snippet applies rules to all the files in the project.
+You can apply rules to all files or a set of files using glob patterns². The following snippet applies rules to all the files in the project.
 
 ```ini
 # apply rules to all files
