@@ -33,7 +33,7 @@ Traditionally, a team member configures; share configuration file within the tea
 
 The above process brings up:
 
-- **Manual Work**: Any change in code standards leads to repeat all the process of reimporting has to be repeated. It involves manual work and tracing each team member on the same set of coding standards is difficult. Coding standards themselves are a long-discussed collective agreement; It is an invisible pain of a developer.
+- **Manual Work**: Any change in code standards leads to repeat all the process of reimporting. It involves manual work and tracing each team member on the same set of coding standards is difficult. Coding standards themselves are a long-discussed collective agreement.
 
 - **IDE Inflexibility**: All of your team members _might not_ be using the same variant of IDE. Consequently, you have to write and maintain multiple configuration files for IDEs being in use, or all your team members have to use the same variant of IDE.
 
