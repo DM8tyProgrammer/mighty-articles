@@ -1,11 +1,11 @@
 ---
 title: Meet JShell - Java REPL tool
 subtitle: 'Java Fiddler'
-description: Jshell is a new tool in Java ecosystem to quickly play or experiment with Java code.
+description: Jshell is a new tool in Java ecosystem to play or experiment with Java code quickly.
 keywords: 'java, jshell, jshell variables, jshell save session, jshell exit, jshell start, how to start jshell, jshell help, jshell edit'
 image: https://cdn-images-1.medium.com/max/1600/1*VtOc8W-xR2iy8hHRUkZZJw.png
 datePublished: '2017-09-03'
-lastModified: '2020-03-21'
+lastModified: '2020-03-23'
 tags: 'java, tutorial'
 ---
 
@@ -13,7 +13,7 @@ JShell is one of the new addition to JDK system since Java 9.
 
 ## REPL
 
-**R**ead **E**val **P**rint **L**oop is an interactive tool. Typically, It is command-line based that _reads_ a statement or an expression or a definition _evaluates_ them, _prints_ the result or prints the error message if there is any problem in execution and keep on looping the same until you asked it to quit.
+**R**ead **E**val **P**rint **L**oop is a command-line based interactive tool that _reads_ a statement or an expression or a definition _evaluates_ them, _prints_ the result or prints the error message. It keeps on looping the same until you asked it to quit.
 
 The name REPL is adopted from LISP language where the construct of reading, evaluating, printing as:
 
@@ -23,17 +23,18 @@ The name REPL is adopted from LISP language where the construct of reading, eval
 
 REPL is an easy and quick way to experiment or fiddle with a small piece of code or try out features of language or checking the result of an expression without going through the sophistication of files or IDE project.
 
-_It is not a new kind of tool_. Command Prompt or Shell is an excellent example of this type of tool. Also, many language ecosystems already support REPL: JavaScript (Node ecosystem and within Browser), Python, Ruby…, now Java is in the league.
+It is not a new kind of tool. Command Prompt or Shell is an excellent example of this type of tool. Also, many language ecosystems already support REPL: JavaScript (Node ecosystem and within Browser), Python, Ruby…, **_now Java is in the league_**.
 
 ## JShell
 
-JShell _(Java Shell)_ is the name of Java REPL tool. It supports two types of constructs:
+_JShell_ (Java Shell) is the name of Java REPL tool. It supports two types of constructs:
 
-1. Command: Commands are special instructions to the JShell. A command in JShell starts with starting with `/`.   
-   e.g.
-   `/help` or `/?` to know about JShell and its commands.  
-   `/exit` to exit from the shell.
-2. Java Snippet: A Java language code piece like statement, expression, definition
+1. Java Snippet: A Java language code piece like statement, expression, definition
+
+2. Command: Commands are special instructions to the JShell. A command in JShell starts with starting with `/`.
+
+   e.g.  
+   `/?` to know about JShell and its commands.
 
 ### Real Meat 🍖
 
@@ -47,11 +48,13 @@ $ jshell
 jshell>
 ```
 
+<iframe src="https://giphy.com/embed/xT9IgNwtysgTDyT8U8" width="100%" height="178" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
 JShell starts with a welcome message along with prompt `jshell>` which indicates that it is ready for accepting input from you.
 
 ### Statements & Expressions
 
-Type any statement or expression to get started with it. You would be astonished after seeing the immediate result.
+Type any statement or expression to get started with it. The result would be immediately printed, unlike regular Java program where you have to compile to see the result.
 
 ```java
 jshell> 2 + 3 // expression
@@ -62,9 +65,13 @@ jshell> new Date()
 $3 ==> Mon Aug 28 10:21:21 EST 2017
 ```
 
-A statement should not end with `;`, but if you are clubbing multiple statements in a single line, then it is mandatory to insert ; in between them (at least).
+A statement should not end with `;`, but if you are clubbing multiple statements in a single line, then it is mandatory to insert `;` in between them (at least).
 
 ### Variables
+
+JShell assigns each expression a name starting with `$` and followed by a number only if you have not assigned the name for it.
+
+e.g. `new Date()` is assigned `$3`. (check above section)
 
 ```java
 jshell> int y = 1;double z = 2.0
@@ -74,8 +81,6 @@ z ==> 2.0
 
 To know the value of a variable, you can type the variable name.
 
-JShell assigns each expression a name starting with `$` and followed by a number only if you have not assigned the name for it, e.g. `new Date()` is assigned `$3`.
-
 ```java
 jshell> x
 x ==> 10
@@ -83,7 +88,7 @@ jshell>$3
 $3 ==> Mon Aug 28 10:21:21 IST 2017
 ```
 
-If you could not remember what name JShell has assigned to your expression, don't worry; just type `/vars` and voila! It lists all the variables you have typed and expression values.
+JShell provides `/vars` command to list the variables declared so far.
 
 ```java
 jshell> /vars
@@ -127,8 +132,6 @@ Just like `/vars`, there are more listing commands:
 
 ### Loading External Jar
 
-> Don't limit yourself to Java inbuilt wall, when you can do endless by jumping the wall.
-
 An external jar can be loaded with the following commands:  
 `/reload` -class-path <path-to-jar>   
 `/env` -class-path <path-to-jar>
@@ -143,6 +146,8 @@ jshell> StringUtils.isEmpty("")
 ### Code Completion
 
 JShell does not feature Intellisense; however, it presents a very close feature commonly known as _Code Completion_. When in doubt, press <kbd>tab</kbd> to get the all the alternatives or let it complete the method name or code at the cursor.
+
+<iframe src="https://giphy.com/embed/xT9IgfhUW8b5LHsHrq" width="100%" height="214" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 Code completion feature gives the bonus of JavaDoc when it is asked for immediately after left open brace `(` in case of a method.
 
@@ -165,12 +170,13 @@ Allocates a Date object and initializes it so that it represents the time at whi
 
 ### Working with files
 
-It is possible to store the content of the session to a file.  
-`/save <path-to-file>` stores only Java Snippets.  
-`/save -history <path-to-file>` stores Java Snippets and JShell commands.
+It is possible to store the content of the session to a file.
+
+- `/save <path-to-file>` stores only Java Snippets.
+- `/save -history <path-to-file>` stores Java Snippets and JShell commands.
 
 e.g.  
-`/save ~/dev/jshell.jsh` stores the following content to a file named jshell.jsh.
+`/save ~/dev/jshell.jsh` stores the following content to a file named `jshell.jsh`.
 
 ```java
 2+3
@@ -225,7 +231,7 @@ import org.apache.commons.lang.StringUtils;
 StringUtils.isEmpty("")
 ```
 
-> If it is possible to save, then it is also possible to open or load the content of the same?
+#### If it is possible to save, then it is also possible to open or load the content of the same?
 
 Hell! You are thinking right:
 `/open <file-path>` loads the content of the file specified by `<file-path>`.
@@ -271,7 +277,7 @@ return 'F';
 What if you want to change the value of the x *(tagged by id 2)* ?   
 What if you want to change the definition of A class *(tagged by 9)* ?
 
-Yes, All these are possible with `/edit` command. `/edit` opens up a GUI utility named **Edit Pad** which is a basic text editor. It accepts id or name of the definition as an argument.
+Yes, all these are possible with `/edit` command. `/edit` opens up a GUI utility named **Edit Pad** which is a basic text editor. It accepts id or name of the definition as an argument.
 
 e.g.  
 `/edit 9` or `/edit A` opens up as shown below:
