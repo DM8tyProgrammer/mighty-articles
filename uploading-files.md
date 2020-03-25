@@ -168,7 +168,7 @@ Scanning every uploaded file is an essential task. Additionally, you can conside
 
 #### Integrity Check
 
-A transferred file must be validated. _Checksum Checking_ is a well-known practice to verify file integrity. There are many hashing algorithms to choose from `MD5`, `SHA-1`, `SHA-256` or many more. Whatever algorithm for whatsoever reasons should be supported by both Client and Server implementation.
+A transferred file must be validated. _Checksum Checking_ is a well-known practice to verify file integrity. There are many hashing algorithms to choose from `MD5`, `SHA-1`, `SHA-256` or many more. Whatever algorithm is chosen for whatsoever reasons should be supported by both Client and Server implementation.
 
 HTTP Header: `Etag` is used to exchange checksum. The calculated value must be transferred over the secure channel (TLS).
 

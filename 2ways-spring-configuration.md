@@ -225,9 +225,11 @@ Spring developers should include conditional properties construct, or they can a
 
 ## References
 
-1. Spring Configuration Meta
+1. Spring Configuration Meta  
    https://docs.spring.io/spring-boot/docs/2.1.7.RELEASE/reference/html/configuration-metadata.html
-2. JSON Schema
+2. JSON Schema  
    https://json-schema.org/understanding-json-schema/
-3. Polymorphic Spring Configuration https://stackoverflow.com/questions/53962547/polymorphic-configuration-properties-in-spring-boot
-4. Oracle Driver https://docs.oracle.com/cd/E13222_01/wls/docs81/jdbc_drivers/oracle.html
+3. Polymorphic Spring Configuration  
+   https://stackoverflow.com/questions/53962547/polymorphic-configuration-properties-in-spring-boot
+4. Oracle Driver
+   https://docs.oracle.com/cd/E13222_01/wls/docs81/jdbc_drivers/oracle.html
