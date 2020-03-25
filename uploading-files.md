@@ -1,12 +1,12 @@
 ---
-title: Uploading files over web
+title: Uploading files over the web
 tags: system design
 description: 'Uploading files over web is not an easy task. It involves considerable challenges in developing a solution that works for all file sizes.'
 datePublished: 2020-03-25
 lastModified: 2020-03-25
 ---
 
-Uploading files over web is not an easy task. It involves considerable challenges in developing a solution that works for all file sizes. Uploading files are prone to error, users drop, and security risks. On each failure, the file needs to be re-uploaded: which adversely affect associated user experience.
+Uploading files over the web is not an easy task. It involves considerable challenges in developing a solution that works for all file sizes. Uploading files are prone to error, users drop, and security risks. On each failure, the file needs to be re-uploaded: which adversely affect associated user experience.
 
 ## Problems
 
