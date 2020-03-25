@@ -1,10 +1,10 @@
 ---
 title: Springboot Config Documentation, Two Ways With IntelliJ IDEA
-subtitle: 'IDE integrated options to assist the writing of configuration files.'
+description: 'IDE integrated options to assist the writing of configuration files.'
 tags: spring boot, java
 image: 'https://dzone.com/storage/temp/12792889-road-sign-pointing-in-two-directions.jpeg'
 datePublished: 2019-12-03
-lastModified: 2020-03-15
+lastModified: 2020-03-25
 ---
 
 In modern software development, the applications are driven by configuration.
