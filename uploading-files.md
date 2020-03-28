@@ -3,7 +3,7 @@ title: Uploading files over the web
 tags: system design
 description: 'Uploading files over web is not an easy task. It involves considerable challenges in developing a solution that works for all file sizes.'
 datePublished: 2020-03-25
-lastModified: 2020-03-28
+lastModified: 2020-03-29
 image: 'https://cdn-images-1.medium.com/max/1600/1*pOBmn1GD5jrXbceIlrnVpg.png'
 ---
 
@@ -169,7 +169,7 @@ Scanning every uploaded file is an essential task. Additionally, you can conside
 
 #### Integrity Check
 
-A transferred file must be validated. _Checksum Checking_ is a well-known practice to verify file integrity. There are many hashing algorithms to choose from `MD5`, `SHA-1`, `SHA-256` or many more. Whatever algorithm is chosen for whatsoever reasons should be supported by both Client and Server implementation.
+A transferred file must be validated. _Checksum Checking_ is a well-known practice to verify file integrity. There are many hashing algorithms to choose from `MD5`, `SHA-1`, `SHA-256` or many more. Whatever algorithm is chosen for whatsoever reasons, should be supported by both Client and Server implementation.
 
 HTTP Header: `Etag` is used to exchange checksum. The calculated value must be transferred over the secure channel (TLS).
 
