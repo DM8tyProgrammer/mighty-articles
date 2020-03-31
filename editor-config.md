@@ -1,11 +1,11 @@
 ---
 title: 'Level 0 - Coding Standard with EditorConfig'
-subtitle: 'Level up Coding Standard'
+subtitle: 'Level up consistency of coding standard'
 description: 'Editor Config, an INI format based configuration system that let you establish project level coding standard; It allows configuring: indentation style, indentation size, line width and more'
 image: 'https://themightyprogrammer.dev/post/editor-config.jpg'
 keywords: 'coding standard, editor config, consistent coding standard, editor config guide, editorconfig tutorial, editorconfig linewidth, editorconfig indentsize, intellj editorconfig'
 datePublished: '2020-01-06'
-lastModified: '2020-03-22'
+lastModified: '2020-04-01'
 tags: Coding standand
 ---
 
@@ -29,9 +29,9 @@ Coding standards may include:
 
 Many IDEs provide a mechanism for code formatting configuration. This configuration can be exported to a file in an IDE specific file.
 
-Traditionally, a team member configures; share configuration file within the team to avoid rework by other team members. Team members import the configuration file into their IDE. Thus, the code standard is shared and applied.
+A team member configures; distribute configuration file within the team to avoid rework by other team members. They import the configuration file into their IDE. Thus, the code standard is shared and applied.
 
-The above process brings up:
+The above exercise brings up:
 
 - **Manual Work**: Any change in code standards leads to repeat all the process of reimporting. It involves manual work and tracing each team member on the same set of coding standards is difficult. Coding standards themselves are a long-discussed collective agreement.
 
@@ -46,9 +46,7 @@ The above process brings up:
 
 ## In action
 
-You create a file named `.editorconfig` in your project root and don't forget to commit the file!
-
-The file is collections of rules; each rule is simple key-value pair separated by `=`. The first rule you write:
+You create a file named `.editorconfig` in your project root. The file is collections of rules; each rule is simple key-value pair separated by `=`. The first rule you write:
 
 ```ini
 root = true
@@ -56,11 +54,11 @@ root = true
 
 It is a declaration that the current `.editorconfig` file is root file.
 
-By design, editor config engine searches for `.editorconfig` file in the current working directory and its all parents' directories till it finds `.editorconfig` with `root = true` and merges all the found configurations.
+By design, editor config engine searches for `.editorconfig` file in the current working directory and its all parents' directories till it finds `.editorconfig` with `root = true` and merge the configurations of all found `.editorconfig` files.
 
 ### Apply rules to files
 
-You can apply rules to all files or a set of files using glob patterns². The following snippet applies rules to all the files in the project.
+You can apply rules to all files or a set of files using glob patterns². The following snippet applies rules to _all the files_ in the project:
 
 ```ini
 # apply rules to all files
@@ -85,7 +83,18 @@ indent_size = 4
 # yaml would get all value with overridden indent_size
 ```
 
-YAML files would be constrained by all rules (defined in the previous section for `[*]` all files) and with overridden _Indention Size_.
+YAML files would be constrained by all rules (defined in the previous section under `[*]`) and with overridden _Indention Size_.
+
+#### Rules to Specific File
+
+Rules can also be targeted to a specific file by addressing it with its name enclosed `[{}]` .
+
+```ini
+# Rules only applicable to kconfig.yml
+
+[{kconfig.yml}]
+indent_size = 2
+```
 
 A typical file be:
 
