@@ -5,7 +5,7 @@ description: 'Editor Config, an INI format based configuration system that let y
 image: 'https://themightyprogrammer.dev/post/editor-config.jpg'
 keywords: 'coding standard, editor config, consistent coding standard, editor config guide, editorconfig tutorial, editorconfig linewidth, editorconfig indentsize, intellj editorconfig'
 datePublished: '2020-01-06'
-lastModified: '2020-04-01'
+lastModified: '2020-04-02'
 tags: Coding standand
 ---
 
@@ -29,7 +29,7 @@ Coding standards may include:
 
 Many IDEs provide a mechanism for code formatting configuration. This configuration can be exported to a file in an IDE specific file.
 
-A team member configures; distribute configuration file within the team to avoid rework by other team members. They import the configuration file into their IDE. Thus, the code standard is shared and applied.
+A team member configures; distributes configuration file within the team to avoid rework by other team members. They import the configuration file into their IDE; thus, the code standard is shared and applied.
 
 The above exercise brings up:
 
@@ -39,10 +39,10 @@ The above exercise brings up:
 
 ## EditorConfig saves your time by:
 
-- **Enabling Auto Import**: Whenever there are changes in configuration, commit the corresponding rules in `.editorconfig` file and supported IDEs automatically apply changes.
+- **Enabling Auto Import**: Whenever there are changes in coding standards, commit the corresponding rules in `.editorconfig` file and supported IDEs automatically apply changes.
 
-- **IDE Flexibility**: EditorConfig is available to multiple IDEs.
-  Some IDE inherently supports EditorConfig; some might require external plugins. It might be that your IDE might not support all the properties. Check the IDE documentation for details.
+- **IDE Flexibility**: EditorConfig is available to many IDEs.
+  Some IDE inherently support EditorConfig; some might require external plugins. It might be that your IDE might not support all the properties. Check the IDE documentation for details.
 
 ## In action
 
@@ -54,7 +54,7 @@ root = true
 
 It is a declaration that the current `.editorconfig` file is root file.
 
-By design, editor config engine searches for `.editorconfig` file in the current working directory and its all parents' directories till it finds `.editorconfig` with `root = true` and merge the configurations of all found `.editorconfig` files.
+By design, editor config engine searches for `.editorconfig` file in the current working directory and its all parents' directories till it finds `.editorconfig` with `root = true` and merge the configurations of all found `.editorconfig` files.
 
 ### Apply rules to files
 
@@ -72,15 +72,13 @@ charset = utf-8
 
 ### Overriding Rules
 
-EdiorConfig files are read from top to bottom. It means the latest rule is considered the final applicable rule and this can be used to override properties.
+EdiorConfig files are read from top to bottom. Consequently, the latest rule became final applicable rule; this mechanism allows overriding properties.
 
 Consider, you want to override Indention size (`indent_size`) to `4` for yaml files and keeping all the rest rules.
 
 ```ini
 [*.yml]
 indent_size = 4
-
-# yaml would get all value with overridden indent_size
 ```
 
 YAML files would be constrained by all rules (defined in the previous section under `[*]`) and with overridden _Indention Size_.
@@ -91,12 +89,13 @@ Rules can also be targeted to a specific file by addressing it with its name enc
 
 ```ini
 # Rules only applicable to kconfig.yml
-
 [{kconfig.yml}]
 indent_size = 2
 ```
 
-A typical file be:
+### Merging All
+
+By combining all discussed concepts, a .editorconfig file looks like:
 
 ```ini
 root = true
@@ -110,8 +109,11 @@ line_width = 110
 [*.yml]
 indent_size = 4 #override the size 2 for 4
 
-# Level-1 config
+# Rules only applicable to kconfig.yml
+[{kconfig.yml}]
+indent_size = 2
 
+# Level-1 config
 [*.java]
 curly_bracket_next_line = true
 ```
