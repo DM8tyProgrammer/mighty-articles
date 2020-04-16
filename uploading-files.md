@@ -3,7 +3,7 @@ title: Uploading files over the web
 tags: system design
 description: 'Uploading files over web is not an easy task. It involves considerable challenges in developing a solution that works for all file sizes.'
 datePublished: 2020-03-25
-lastModified: 2020-03-29
+lastModified: 2020-04-17
 image: 'https://cdn-images-1.medium.com/max/1600/1*pOBmn1GD5jrXbceIlrnVpg.png'
 ---
 
@@ -115,6 +115,8 @@ Modern databases too include _BLOB storage_ similar to Object Storage. Object St
 When file size crosses a certain limit; it becomes necessary to split it and upload it in multiple requests.
 
 A file is a sequence of bytes. We can collate some bytes into _chunks_. These chunks need to be individually uploaded by Client and combined by Server.
+
+![chunking](https://miro.medium.com/max/1400/1*3TT5sAgkufcV8YQiWKsgcQ@2x.jpeg)
 
 ```
 no_of_requests = file_size / chunk_size
