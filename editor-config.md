@@ -5,11 +5,13 @@ description: 'Editor Config, an INI format based configuration system that let y
 image: 'https://themightyprogrammer.dev/post/editor-config.jpg'
 keywords: 'coding standard, editor config, consistent coding standard, editor config guide, editorconfig tutorial, editorconfig linewidth, editorconfig indentsize, intellj editorconfig'
 datePublished: '2020-01-06'
-lastModified: '2020-04-02'
+lastModified: '2020-05-12'
 tags: Coding standand
 ---
 
-[Editor Config](https://editorconfig.org), an INI¹ format based configuration system that let you establish project level coding standard; It allows configuring: indentation style, indentation size, line width and more. It helps in reducing the effort required to bring each team member to the consistent coding standard by automatically importing and applying the configuration to IDE.
+[Editor Config](https://editorconfig.org) is an INI¹ format based configuration system that let you establish or define project-level coding standard consisting of configuration: indentation style, indentation size, line width and more.
+
+It helps in reducing the effort required to bring each team member to the consistent coding standard by automatically importing and applying the configuration to IDE in use.
 
 ## What is EditorConfig solving?
 
@@ -33,7 +35,7 @@ A team member configures; distributes configuration file within the team to avoi
 
 The above exercise brings up:
 
-- **Manual Work**: Any change in code standards leads to repeat all the process of reimporting. It involves manual work and tracing each team member on the same set of coding standards is difficult. Coding standards themselves are a long-discussed collective agreement.
+- **Manual Work**: Any change in code standards leads to repeat all the process of reimporting. It involves manual work, and tracing each team member on the same set of coding standards is difficult. Coding standards themselves are a long-discussed collective agreement.
 
 - **IDE Inflexibility**: All of your team members _might not_ be using the same variant of IDE. Consequently, you have to write and maintain multiple configuration files for IDEs being in use, or all your team members have to use the same variant of IDE.
 
@@ -54,7 +56,7 @@ root = true
 
 It is a declaration that the current `.editorconfig` file is root file.
 
-By design, editor config engine searches for `.editorconfig` file in the current working directory and its all parents' directories till it finds `.editorconfig` with `root = true` and merge the configurations of all found `.editorconfig` files.
+By design, editor config engine searches for `.editorconfig` file in the current working directory and its all parents' directories till it finds `.editorconfig` with `root = true` and merges by adding or overriding the configurations of found files.
 
 ### Apply rules to files
 
@@ -93,7 +95,7 @@ Rules can also be targeted to a specific file by addressing it with its name enc
 indent_size = 2
 ```
 
-### Merging All
+### Assembling All
 
 By combining all discussed concepts, a .editorconfig file looks like:
 
