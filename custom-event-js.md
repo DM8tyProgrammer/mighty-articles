@@ -5,14 +5,14 @@ tags: rxjs, javascript
 description: 'Building up Publisher-subscriber event model on top of RxJS.'
 image: 'https://themightyprogrammer.dev/post/custom-event.jpg'
 datePublished: '2020-01-29'
-lastModified: '2020-03-16'
+lastModified: '2020-06-02'
 ---
 
-Event-Based Programming is natural to any GUI based interface. HTML DOM¹ offers inbuilt Event Notification model, but **_it is only useful when you are dealing with DOM Elements._** There is no support for non-DOM elements.
+Event-Based Programming is natural to any GUI based interface. HTML DOM¹ offers an inbuilt Event Notification model, but **_it is only useful when dealing with DOM Elements._** There is no support for non-DOM elements.
 
-Web applications have grown up in complexity with time; also, Javascript started participating in backend applications; which in turn made the world to see Javascript as more than HTML DOM manipulation gig.
+Web applications have grown in complexity with time; also, JavaScript started participating in backend applications, which in turn made the world see JavaScript as more than HTML DOM manipulation gig.
 
-_This article showcases building up custom event publisher-subscriber model on top of Reactive Programming for non-DOM elements._
+_This article showcases building up a custom event publisher-subscriber model on top of Reactive Programming for non-DOM elements._
 
 ## Setting up Stage
 
@@ -24,21 +24,22 @@ Event-Driven programming paradigm² introduces an intuitive flow of control base
 
 #### Vocabulary
 
-- One who emits event can be called Event Publisher or Event Emitter or Event Dispatcher.
-- One who listens to events is called Event Subscriber or Event Listener or Event Handler.
+- One that emits events can be called Event Publisher or Event Emitter or Event Dispatcher.
+- One that listens to events is called Event Subscriber or Event Listener or Event Handler.
 
-In general, **Publisher-Subscriber** or **PubSub** term is used collectively for event publisher and even subscriber.
+In general, **Publisher-Subscriber** or **PubSub** term is used collectively for event publishers and even subscribers.
 
 ### Reactive Programming
 
-Reactive Programming is a trending paradigm² these days. It is the processing of streams of data asynchronously.
-[RxJS](https://rxjs-dev.firebaseapp.com/) is a <b>r</b>eactive programming e<b>x</b>tension for <b>J</b>ava<b>s</b>cript. You are going to build an event notification model on top of it by modelling events as a stream of data.
+Reactive Programming paradigm² introduces the processing of streams of data asynchronously. It is a trending paradigm² these days.
+
+[RxJS](https://rxjs-dev.firebaseapp.com/) is a <b>r</b>eactive programming e<b>x</b>tension for <b>J</b>ava<b>S</b>cript. You would build an event notification model on top of it by modeling events as a stream of data.
 
 ## In Action
 
 ### Problem Statement
 
-Consider modelling Thermostat, when room temperature crosses a certain threshold (30°C), AC would turn up, and windows would close.
+Consider modeling Thermostat, when room temperature crosses a certain threshold (30°C), AC would turn up, and windows would close.
 
 ### Design
 
@@ -76,7 +77,7 @@ on(event, action) {
 }
 ```
 
-Whenever `next` is called the `on` API would be triggered; by design, callback would be called.
+Whenever `next` is called the `on` API would be triggered; by design, the callback would be called.
 
 ### Publishing Events
 
@@ -122,7 +123,7 @@ thermostat.on('above', (t) => {
 })
 ```
 
-Wiring all pieces together. A simulation is build:
+Wiring all pieces together. A simulation is built:
 
 <iframe
      src="https://codesandbox.io/embed/custom-event-rxjs-ho0n5?fontsize=14&theme=light&view=preview"
@@ -137,11 +138,11 @@ Wiring all pieces together. A simulation is build:
 
 Any variation you make with the above code itself a pattern:
 
-- Keeping event subscription data in the mediator class of Event-Emitter and Event-Listener is **in-memory Event Bus** pattern.
+- Keeping event subscription data in the mediator class of Event-Emitter and Event-Listener is an **in-memory Event Bus** pattern.
 - If the event holds enough information that Event-Listener doesn't look back to Event-Emitter; it is **Event Carried State Transfer** pattern
 - If you store all events in datastore, it is **Event Sourcing** pattern _(possible for backend side)_.
 - If there is a network partition between Event Publisher and Event Subscriber, then collectively, it is a **Reactive System**. It is build using queuing technologies _(possible for backend side)_.
-- An event may contain, reference or link back to its source; it is **Source Aware Event** pattern. In HTML DOM, each event has a field named `target` to point back to its source.
+- An event may contain a reference or link back to its source; it is **Source Aware Event** pattern. In HTML DOM, each event has a field named `target` to point back to its source.
 
 ## Footnotes
 
