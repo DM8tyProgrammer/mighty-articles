@@ -4,7 +4,7 @@ subtitle: Continuous change is the key to balance software development.
 description: 'In the philosophical view of Software development, there exist, two realms that affect the reality of Software: product end and Technology end. These two realms are so closely linked that a change in one leads to change in another field.'
 image: 'https://miro.medium.com/max/2000/1*VTiL7IE0ATS4FhOPbiuP3Q.png'
 datePublished: '2020-05-15'
-lastModified: '2020-05-15'
+lastModified: '2020-06-11'
 ---
 
 Software development is not only about code. It is also about the process and the people around it. At the core, Product (Business) Managers and Developers turn the idea of Software into reality.
