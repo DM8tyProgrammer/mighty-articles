@@ -3,17 +3,17 @@ title: Uploading files over the web
 tags: system design
 description: 'Uploading files over web is not an easy task. It involves considerable challenges in developing a solution that works for all file sizes.'
 datePublished: 2020-03-25
-lastModified: 2020-04-17
+lastModified: 2020-06-20
 image: 'https://cdn-images-1.medium.com/max/1600/1*pOBmn1GD5jrXbceIlrnVpg.png'
 ---
 
-Uploading files over the web is not an easy task. It involves considerable challenges in developing a solution that works for all file sizes. Uploading files are prone to failures, users drop, and security risks. On each failure, the file needs to be re-uploaded: which adversely affect associated user experience.
+Uploading files over the web is not an easy task. It involves considerable challenges in developing a solution that works for all file sizes. Uploading files are prone to failures, users drop, and security risks. On each failure, the file needs to be re-uploaded: which adversely affects associated user experience.
 
 ## Problems
 
 ### Network Bandwidth & File Size
 
-The file upload takes considerable time: _more the time to upload, more the chances of failure or connection drop_. **With each failure, a file needs to be re-uploaded from the beginning with traditional methods.**
+The file upload takes considerable time: _more the time to upload, more the chances of failures or connection drop_. **With each failure, a file needs to be re-uploaded from the beginning with traditional methods.**
 
 The time to upload file can be understood by the following equation:
 
@@ -40,7 +40,7 @@ It can be interpreted as:
 
 Uploading files is not free from Security Risks. The surface area of security risk depends upon the purpose of uploaded files.
 
-- **Denial of Service**: Server spends most of the time in serving a few requests; It expedites the hacking attempt in making Server go out _of service_.
+- **Denial of Service**: Server spends most of the time serving a few requests; It expedites the hacking attempt in making Server go out _of service_.
 - **Code Infusion**: File upload easily enables code to be uploaded if unchecked, and it may lead to system hijacking.
 - **File Overriding**: Client provided path can trick Server into replacing any critical file.
 
@@ -62,15 +62,15 @@ Pre checking with Server is an additional network request; it may not be useful 
 
 #### With Http Header Expect: 100-continue¹
 
-Http header `Expect: 100-continue` is probing header that used to determine whether Server can receive the current request with large message body or not. If Server accepts, it sends back `100` else `417` status code. If Server accepts, a second request is trigged to upload the file.
+Http header `Expect: 100-continue` is a probing header that used to determine whether Server can receive the current request with large message body or not. If Server accepts, it sends back `100` else `417` status code. If Server accepts, a second request is trigged to upload the file.
 
-**The beauty of this mechanism is that the second request automatically trigged by Http Client**. Unfortunately, It _cannot_ be set via programming means available: `fetch` API or `XHR` (Ajax) request. It can only be set by underlying user-agent or browser. In short, A programming effort _could not_ be made.
+**The beauty of this mechanism is that the second request automatically trigged by Http Client**. Unfortunately, It _cannot_ be set via programming means available: `fetch` API or `XHR` (Ajax) request. It can only be set by an underlying user-agent or browser. In short, A programming effort _could not_ be made.
 
-Also, it is not well understood by many Servers implementations even if you somehow manage to set the header.
+Also, many Servers implementations are not well understood the header even if you somehow manage to set it.
 
 Curl add this header on crossing `1024KB` request body size³ when browsers add who knows.
 
-> It is a useful header to be practically useless. We need to pre-check through standard request.
+> It is a useful header to be practically useless. We need to pre-check through standard requests.
 
 #### With Two Separate Standard HTTP requests
 
@@ -81,7 +81,7 @@ Overall uploading process can be conceptualized as two standard HTTP requests:
 
 ![](https://cdn-images-1.medium.com/max/1600/1*VZgESv6oCodmkDZw7rIFig.png)
 
-You need to develop your error and success message or codes to realise this mechanism.
+You need to develop your error and success message or codes to realize this mechanism.
 
 #### Without Reserving capacity
 
@@ -94,19 +94,17 @@ Both clients would get permission to upload, and after a while, both requests wo
 #### With Reserved Capacity
 
 _What if Server could reserve capacity for a file that is about to be uploaded?_
-It might look like a good idea, but it may not.
+It might look like a good idea, but it may not. A Server would be dealing with _multiple requests_ at the moment, and not all of these would be successful. If unnoticed, Server may run out of storage space soon, even though Server having storage space conceptually. Also, any miscreant could learn it; place an attack on service.
 
-Server would be dealing with _multiple requests_ at an instance, and not all of these would be successful. If unnoticed, Server may run out of storage space soon; even though Server having storage space conceptually. Also, any miscreant could learn it; place an attack on service.
-
-You need to devise a strategy to reclaim space carefully. If you are thinking to build _resumability_, Server needs to wait for some time to reclaim corresponding space.
+You need to devise a strategy to reclaim space carefully. If you are thinking of building _resumability_, Server needs to wait for some time to reclaim unused space.
 
 #### With Dynamic Capacity
 
-We live in a cloud computing world; where you don’t need to plan capacity (only if you have unlimited money 😌 ). Most of Cloud Providers provides _Object Storage_.
+We live in a cloud computing world, where you don’t need to plan capacity (only if you have unlimited money 😌). Most of Cloud Providers provides _Object Storage_.
 
 Object Storage obscures scalability challenges associated with traditional file systems, and provide a simplified API to access entity named _Objects_. An `object` is semantically equivalent to a file.
 
-Modern databases too include _BLOB storage_ similar to Object Storage. Object Storages and Databases are alike in term of file system abstraction, but Databases offer their challenges of operations.
+Modern databases too, include _BLOB storage_ similar to Object Storage. Object Storages and Databases are similar in terms of file system abstraction, but Databases offer their operations challenges.
 
 ### Resumability & Time
 
@@ -129,7 +127,7 @@ It is a bit slower than _traditional mechanism_ as multiple requests increase ne
 - Provide the ability to upload large files over 2GB
 - Resumability can be build using this idea.
 
-Chunking is effortful; it introduces additional metadata to be exchanged to build reliable file upload. HTML 5 provides many useful utilities to realise this mechanism.
+Chunking is effortful; it introduces additional metadata to be exchanged to build reliable file upload. HTML 5 provides many useful utilities to realize this mechanism.
 
 Here is a basic code snippet to illustrate the core implementation of chunking :
 
@@ -171,9 +169,9 @@ Scanning every uploaded file is an essential task. Additionally, you can conside
 
 #### Integrity Check
 
-A transferred file must be validated. _Checksum Checking_ is a well-known practice to verify file integrity. There are many hashing algorithms to choose from `MD5`, `SHA-1`, `SHA-256` or many more. Whatever algorithm is chosen for whatsoever reasons, should be supported by both Client and Server implementation.
+A transferred file must be validated. _Checksum Checking_ is a well-known practice to verify file integrity. There are many hashing algorithms to choose from `MD5`, `SHA-1`, `SHA-256`, or many more. Whatever algorithm is chosen for whatsoever reasons, should be supported by both Client and Server implementation.
 
-HTTP Header: `Etag` is used to exchange checksum. The calculated value must be transferred over the secure channel (TLS).
+HTTP Header: `Etag` is used to exchange checksum. The calculated checksum value must be transferred over the secure channel (TLS).
 
 #### Blacklisting
 
