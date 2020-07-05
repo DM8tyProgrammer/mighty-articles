@@ -30,25 +30,26 @@ Consider the extraction distance between New York and Washington from the output
 
 ```json
 {
-   “destination_addresses” : [ “New York, NY, USA” ],
-   “origin_addresses” : [ “Washington, DC, USA” ],
-   “rows” : [
+   "destination_addresses" : [ "New York, NY, USA" ],
+   "origin_addresses" : [ "Washington, DC, USA" ],
+   "rows" : [
       {
-         “elements” : [
-            {”distance” : {
-                  “text” : “225 mi”,
-                  “value” : 361715
+         "elements" : [
+            {
+	      "distance" : {
+                  "text" : "225 mi",
+                  "value" : 361715
                },
-               “duration” : {
-                  “text” : “3 hours 49 mins”,
-                  “value” : 13725
+               "duration" : {
+                  "text" : "3 hours 49 mins",
+                  "value" : 13725
                },
-               “status” : “OK”
+               "status" : "OK"
             }
          ]
       }
    ],
-   “status” : “OK”
+   "status" : "OK"
 }
 ```
 
@@ -80,11 +81,11 @@ Consider Twitter’s [Tweet object](https://developer.twitter.com/en/docs/tweets
 
 ```json
 {
- “created_at”: “Wed Oct 10 20:19:24 +0000 2018”,
- “id”: 1050118621198921728,
- “id_str”: “1050118621198921728”,
- “text”: “To make room for more expression, we will now count all emojis as equal—including those with gender‍‍‍ ‍‍and skin t… https://t.co/MkGjXf9aXm”,
- “user”: {…}
+ "created_at": "Wed Oct 10 20:19:24 +0000 2018",
+ "id": 1050118621198921728,
+ "id_str": “1050118621198921728",
+ "text": "To make room for more expression, we will now count all emojis as equal—including those with gender‍‍‍ ‍‍and skin t… https://t.co/MkGjXf9aXm",
+ "user": {…}
 .
 .
 .
@@ -107,14 +108,14 @@ class Tweet {
 ```
 
 ```json
-{ “user”: {
-    “id”: 6253282,
-    “id_str”: “6253282”,
-    “name”: “Twitter API”,
-    “screen_name”: “TwitterAPI”,
-    “location”: “San Francisco, CA”,
-    “url”: “https://developer.twitter.com”,
-    “description”: “The Real Twitter API. Tweets about API changes, service issues and our Developer Platform. Don’t get an answer? It’s on my website.”
+{ "user": {
+    "id": 6253282,
+    "id_str": "6253282",
+    "name": "Twitter API",
+    "screen_name": "TwitterAPI",
+    "location": "San Francisco, CA",
+    "url": "https://developer.twitter.com",
+    "description": "The Real Twitter API. Tweets about API changes, service issues and our Developer Platform. Don’t get an answer? It’s on my website."
 .
   }
 }
@@ -173,26 +174,26 @@ Again, consider the extraction distance between New York and Washington from the
 
 ```json
 {
-   “destination_addresses” : [ “New York, NY, USA” ],
-   “origin_addresses” : [ “Washington, DC, USA” ],
-   “rows” : [
+   "destination_addresses" : [ "New York, NY, USA" ],
+   "origin_addresses" : [ "Washington, DC, USA" ],
+   "rows" : [
       {
-         “elements” : [
+         "elements" : [
             {
-				”distance” : {
-                  “text” : “225 mi”,
-                  “value” : 361715
+	      "distance" : {
+                  "text" : "225 mi",
+                  "value" : 361715
                },
-               “duration” : {
-                  “text” : “3 hours 49 mins”,
-                  “value” : 13725
+               "duration" : {
+                  "text" : "3 hours 49 mins",
+                  "value" : 13725
                },
-               “status” : “OK”
+               "status" : "OK"
             }
          ]
       }
    ],
-   “status” : “OK”
+   "status" : "OK"
 }
 ```
 
@@ -220,8 +221,8 @@ Consider a simple JSON to parse:
 
 ```json
 {
-  “name”: “Mighty”,
-  “handler”: “DM8typrogrammer”
+  "name": "Mighty",
+  "handler": "DM8typrogrammer"
 }
 ```
 
