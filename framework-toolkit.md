@@ -11,25 +11,25 @@ These days software applications are complex in their functions. It is an arduou
 
 It is in practice to build applications by combining owned code with shared code to match up with the fast pace of world demand of software.
 
-Code is distributed/shared as **Libraries** _(tangible unit)_.
+_Code is distributed in a tangible form called_ **Library**.
 
 ## Library
 
-A _Library_ can be a single archive file or a set of files. Language Specification / OS platform / Package Manager specifies the distribution style of a library.
+A _Library_ can be a single compressed file or a directory containing executable code. The shape of Library might be decided by language specification, OS, or package manager.
 
 ### Practical Examples:
 
 - Java ecosystem uses language standard defined layout for shared code in the archived file so-called .jar ("jar" - Java Archive).
 - C/C++ uses OS platform based file `.so` (shared object) on Unix and `.dll` (dynamic link library) on Windows.
-- JavaScript (Node Ecosystem) uses a directory path based mechanism for shared code.
+- JavaScript (Node Ecosystem) uses a directory-based mechanism for shared code.
 
 _Frameworks and Toolkits are aspects of Libraries_.
 
 ## Framework
 
-A _framework_ enforces you to write code in a set of code chunks (framework elements) and calls your engineered code-chunks to do its business. **You are never in-charge of calling these code chunks.**
+A _framework_ enforces you to write code in terms of framework elements and calls these engineered codes to do its business. **You are never in-charge of calling these code chunks.**
 
-In essence, a Framework enforces to develop a mindset to write application code in _term or base_ of the framework. Might be, this is the reason for the name "framework".
+In essence, a Framework enforces to develop a mindset to write application code in _term or base_ of the Framework. Might be this is the reason for the name "framework".
 
 Typically, you annotate or mark your code elements (classes, objects, method) with framework elements. Marking process may vary language to language.
 
