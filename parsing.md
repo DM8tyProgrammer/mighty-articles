@@ -4,7 +4,7 @@ subtitle: A brief introduction
 description: Parsing is a process of converting formatted text into a data structure.
 keywords: parsing, scanning, tokenisation, parsing phases, parsing example
 datePublished: ‘2019-08-05’
-lastModified: ‘2020-12-12’
+lastModified: ‘2020-12-16’
 ---
 
 **Parsing** is a process of converting _formatted text_ into a _data structure_. A data structure type can be any suitable representation of the information engraved in _source text_.
@@ -18,13 +18,15 @@ lastModified: ‘2020-12-12’
 
 Consider an example of Date parsing from a string (source) in format `DD-MM-YYYY` to Date object:
 
-```
+```java
 class Date {
   int day;
   int month;
   int year;
 }
 ```
+
+![](https://miro.medium.com/max/1400/1*AmS9rVgJeizwqtC0_XHGlw.png)
 
 ### Implementation Note
 
@@ -85,7 +87,7 @@ _Parsing_ can be scoped as a composition of Scanning and Syntactic Analysis or j
 ### Scanning
 
 _Scanning_ is a process of converting a stream of characters into _tokens._
-![](https://miro.medium.com/max/1400/1*NMqJryiyOtf3s757A3xEgQ.png)]
+![](https://miro.medium.com/max/1400/1*NMqJryiyOtf3s757A3xEgQ.png)
 A token represents a “concept” introduced by format. Logically, a token can be considered as a label assigned to one or more characters. From a processing point of view: A _token_ is an object, can contain _lexeme³_, location information, and more.
 
 In Java language: `if`, `while`, `int` are examples of tokens. In date parsing, tokens are defined by Regex; `\d{2}` (day, month), `—` (separator), `\d{4}` (year) are tokens. Note: Day and month are the same token type. A token is defined by “the pattern of characters” not by locations of characters.
@@ -106,7 +108,8 @@ The scale of parsing determines the inclusion or exclusion of Scanning as part o
 
 - It is beneficial for big-scale parsing like language (natural or programming) parsing to keep Scanning, and Syntactic Analysis separated. In this case, Syntactic Analysis is called _parsing._
 - For small-scale parsing like Date, it may not be beneficial to distinct Lexer and Syntactic Analysis. In this case, it is called _Scannerless Parsing_.
-  Many times, parsing tasks are delegated to parser code generators like [Antlr](https://www.antlr.org/) or [Lex](http://dinosaur.compilertools.net/) . These tools require a set of rules or grammar and generate parser code. The generated parsers produce a tree upon parsing, which may not be the desired data structure; however, these libraries provide sufficient APIs to convert the constructed tree to the desired data structure.
+  
+Many times, parsing tasks are delegated to parser code generators like [Antlr](https://www.antlr.org/) or [Lex](http://dinosaur.compilertools.net/) . These tools require a set of rules or grammar and generate parser code. The generated parsers produce a tree upon parsing, which may not be the desired data structure; however, these libraries provide sufficient APIs to convert the constructed tree to the desired data structure.
 
 There is more in Parser world; the type of parsing styles: top-down or bottom-up, Leftmost or Rightmost derivation. These design styles limit parsing capabilities. You may visit the following link to get a synoptic view of these design choices and their comparison:
 [A Guide To Parsing: Algorithms And Terminology](https://tomassetti.me/guide-parsing-algorithms-terminology/#tablesParsingAlgorithms)
