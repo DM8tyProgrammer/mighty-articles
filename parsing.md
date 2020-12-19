@@ -4,15 +4,21 @@ subtitle: A brief introduction
 description: Parsing is a process of converting formatted text into a data structure.
 keywords: parsing, scanning, tokenisation, parsing phases, parsing example
 datePublished: ‘2019-08-05’
-lastModified: ‘2020-12-16’
+lastModified: ‘2020-12-19’
 ---
 
-**Parsing** is a process of converting _formatted text_ into a _data structure_. A data structure type can be any suitable representation of the information engraved in _source text_.
+**Parsing** is a process of converting _formatted text_ into a _data structure_. A data structure type can be any suitable representation of the information engraved in the _source text_.
 
 - _Tree_ type is a common and standard choice for XML parsing, HTML parsing, JSON parsing, and any programming language parsing. The output tree is called _Parse Tree_ or _Abstract_ _Syntax Tree_. In HTML context, it is called _Document Object Model_ (DOM).
 - A CSV file parsing can result in a List of List of values _or_ a List of Record objects.
 - _Graph_ Type is a choice for natural language parsing.
-  A piece of program that does parsing is called _Parser_.
+
+A piece of program that does parsing is called _Parser_.
+
+## How it works
+Parsing does analyse the source text against the format prescribed (you know the format beforehand). If source text does not match with the format errors are reported else source text is converted to the data structure.
+
+![](https://cdn-images-1.medium.com/max/1600/1*Tj1H3orLHUpQlbBR45iNNA.png)
 
 ## Small Case Study
 
@@ -31,6 +37,9 @@ class Date {
 ### Implementation Note
 
 For Date parsing, I would be using *Regular Expression*¹ (_regex_ for short). Regex can be matched against a string. It also helps in extracting part of the source text _if it is matched._
+
+
+_Note: This is going to be a small-scale illustration of parsing with "Regex." This might be a fair approach for one-two lines input text but not in every case. You may have to write a parser by hand (most complex) or use Parser Generator tools (moderately complex)._
 
 ### Code
 
@@ -109,9 +118,13 @@ The scale of parsing determines the inclusion or exclusion of Scanning as part o
 - It is beneficial for big-scale parsing like language (natural or programming) parsing to keep Scanning, and Syntactic Analysis separated. In this case, Syntactic Analysis is called _parsing._
 - For small-scale parsing like Date, it may not be beneficial to distinct Lexer and Syntactic Analysis. In this case, it is called _Scannerless Parsing_.
   
-Many times, parsing tasks are delegated to parser code generators like [Antlr](https://www.antlr.org/) or [Lex](http://dinosaur.compilertools.net/) . These tools require a set of rules or grammar and generate parser code. The generated parsers produce a tree upon parsing, which may not be the desired data structure; however, these libraries provide sufficient APIs to convert the constructed tree to the desired data structure.
+Many times, parsing tasks are delegated to parser code generators like [Antlr](https://www.antlr.org/) or [Lex](http://dinosaur.compilertools.net/) . These tools require a set of rules or grammar and generate parser code. 
 
-There is more in Parser world; the type of parsing styles: top-down or bottom-up, Leftmost or Rightmost derivation. These design styles limit parsing capabilities. You may visit the following link to get a synoptic view of these design choices and their comparison:
+![](https://miro.medium.com/max/1400/1*xKb5f_JFv8Detbicdy4ggQ.png)
+
+The generated parsers produce a tree upon parsing, which may not be the desired data structure; however, these libraries provide sufficient APIs to convert the constructed tree to the desired data structure.
+
+There is more in Parser world; the type of parsing styles: top-down or bottom-up, Leftmost or Rightmost derivation. These design styles limit parsing capabilities of the parser. You may visit the following link to get a synoptic view of these design choices and their comparison:
 [A Guide To Parsing: Algorithms And Terminology](https://tomassetti.me/guide-parsing-algorithms-terminology/#tablesParsingAlgorithms)
 
 ## Footnotes
