@@ -5,6 +5,7 @@ description: Parsing is a process of converting formatted text into a data struc
 keywords: parsing, scanning, tokenisation, parsing phases, parsing example
 datePublished: ‘2019-08-05’
 lastModified: ‘2020-12-19’
+image: https://miro.medium.com/max/1400/1*AmS9rVgJeizwqtC0_XHGlw.png
 ---
 
 **Parsing** is a process of converting _formatted text_ into a _data structure_. A data structure type can be any suitable representation of the information engraved in the _source text_.
