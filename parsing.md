@@ -17,9 +17,14 @@ image: https://miro.medium.com/max/1400/1*AmS9rVgJeizwqtC0_XHGlw.png
 A piece of program that does parsing is called _Parser_.
 
 ## How it works
-Parsing does analyse the source text against the format prescribed (you know the format beforehand). If source text does not match with the format errors are reported else source text is converted to the data structure.
+Parser analyses source text against the format* prescribed. If source text does not match against format error is thrown or returned.
+* If source text does not match against format error is thrown or returned.
+* If matches then “data structure” is returned.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*Tj1H3orLHUpQlbBR45iNNA.png)
+
+*format is coded inside the parser.
+> Format is the DNA of a parser.
 
 ## Small Case Study
 
