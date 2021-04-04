@@ -3,7 +3,7 @@ title: Uploading files over the web
 tags: system design
 description: 'Uploading files over web is not an easy task. It involves considerable challenges in developing a solution that works for all file sizes.'
 datePublished: 2020-03-25
-lastModified: 2020-06-20
+lastModified: 2021-04-04
 image: 'https://cdn-images-1.medium.com/max/1600/1*pOBmn1GD5jrXbceIlrnVpg.png'
 ---
 
@@ -64,11 +64,9 @@ Pre checking with Server is an additional network request; it may not be useful 
 
 Http header `Expect: 100-continue` is a probing header that used to determine whether Server can receive the current request with large message body or not. If Server accepts, it sends back `100` else `417` status code. If Server accepts, a second request is trigged to upload the file.
 
-**The beauty of this mechanism is that the second request automatically trigged by Http Client**. Unfortunately, It _cannot_ be set via programming means available: `fetch` API or `XHR` (Ajax) request. It can only be set by an underlying user-agent or browser. In short, A programming effort _could not_ be made.
+**The beauty of this mechanism is that the second request automatically trigged by Http Client**. Unfortunately, It _cannot_ be set via programming means available: `fetch` API or `XHR` (Ajax) request. It can only be set by an underlying user-agent or browser. Curl adds this header on crossing 1024KB request body size³; when browsers add this header, who knows ?
 
-Also, many Servers implementations are not well understood the header even if you somehow manage to set it.
-
-Curl add this header on crossing `1024KB` request body size³ when browsers add who knows.
+*In short, A programming effort could not be made. Also, many Servers implementations do not understand this header.* 
 
 > It is a useful header to be practically useless. We need to pre-check through standard requests.
 
@@ -81,7 +79,7 @@ Overall uploading process can be conceptualized as two standard HTTP requests:
 
 ![](https://cdn-images-1.medium.com/max/1600/1*VZgESv6oCodmkDZw7rIFig.png)
 
-You need to develop your error and success message or codes to realize this mechanism.
+You need to develop a customised protocol of communication to realize this mechanism.
 
 #### Without Reserving capacity
 
@@ -93,18 +91,19 @@ Both clients would get permission to upload, and after a while, both requests wo
 
 #### With Reserved Capacity
 
-_What if Server could reserve capacity for a file that is about to be uploaded?_
-It might look like a good idea, but it may not. A Server would be dealing with _multiple requests_ at the moment, and not all of these would be successful. If unnoticed, Server may run out of storage space soon, even though Server having storage space conceptually. Also, any miscreant could learn it; place an attack on service.
+_What if Server could reserve capacity for a file that is about to be uploaded?_   
+It might look like a good idea, but it may not. A Server would be dealing with _multiple requests_ at the moment, and not all of these would be successful. If unnoticed and unchecked, Server may run out of storage space soon; even though Server having enough storage space physically. 
+Also, any miscreant could learn it and can place an attack on service.
 
-You need to devise a strategy to reclaim space carefully. If you are thinking of building _resumability_, Server needs to wait for some time to reclaim unused space.
+You need to carefully devise a strategy to reclaim space. If you are thinking of building _resumability_, Server needs to wait for some time to reclaim unused space.
 
 #### With Dynamic Capacity
 
 We live in a cloud computing world, where you don’t need to plan capacity (only if you have unlimited money 😌). Most of Cloud Providers provides _Object Storage_.
 
-Object Storage obscures scalability challenges associated with traditional file systems, and provide a simplified API to access entity named _Objects_. An `object` is semantically equivalent to a file.
+Object Storages obscure scalability challenges associated with traditional file systems, and provide a simplified API to access entity named _Objects_. An `object` is semantically equivalent to a file.
 
-Modern databases too, include _BLOB storage_ similar to Object Storage. Object Storages and Databases are similar in terms of file system abstraction, but Databases offer their operations challenges.
+Modern databases too, include _BLOB storage_ similar to Object Storage. Object Storages and Databases are similar in terms of file system abstraction, but Databases offer their operational challenges.
 
 ### Resumability & Time
 
@@ -124,12 +123,12 @@ time_to_upload  ~  time_to_a_request *  no_of_requests
 
 It is a bit slower than _traditional mechanism_ as multiple requests increase networking overhead (ack), but it gives ultimate control in hand:
 
-- Provide the ability to upload large files over 2GB
+- Provide the ability to upload large files over `2GB`.
 - Resumability can be build using this idea.
 
 Chunking is effortful; it introduces additional metadata to be exchanged to build reliable file upload. HTML 5 provides many useful utilities to realize this mechanism.
 
-Here is a basic code snippet to illustrate the core implementation of chunking :
+Here is a basic code snippet to illustrate the core implementation of chunking:
 
 ```javascript
 // file is instance of File API
