@@ -128,6 +128,16 @@ Many times, parsing tasks are delegated to parser code generators like [Antlr](h
 
 ![](https://miro.medium.com/max/1400/1*xKb5f_JFv8Detbicdy4ggQ.png)
 
+---
+<div class="flex">
+<a target="_blank"  href="https://www.amazon.in/gp/offer-listing/B01KGKR6SW/ref=as_li_tl?ie=UTF8&camp=3638&creative=24630&creativeASIN=B01KGKR6SW&linkCode=am2&tag=ps0f920-21&linkId=3791cb5ea2b5d28a486f0c40dbf8c432"><img border="0" src="//ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=IN&ASIN=B01KGKR6SW&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=ps0f920-21" style="display:inline-block!" ></a>
+<a href="https://www.amazon.in/Crafting-Interpreters-Robert-Nystrom/dp/0990582930?pd_rd_w=objnC&pf_rd_p=3d761e30-287e-43cf-9e27-658176acf887&pf_rd_r=AN1TDWD1D9THDRY1NVM0&pd_rd_r=251c6d9d-6861-4d7e-99ac-52ecd6ab0732&pd_rd_wg=9ItZK&pd_rd_i=0990582930&psc=1&linkCode=li3&tag=ps0f920-21&linkId=1e9d278775d2174d7d435369478b5d0a&language=en_IN&ref_=as_li_ss_il" target="_blank"><img border="0" src="//ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=0990582930&Format=_SL250_&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1&tag=ps0f920-21&language=en_IN" ></a><img src="https://ir-in.amazon-adsystem.com/e/ir?t=ps0f920-21&language=en_IN&l=li3&o=31&a=0990582930" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important; display:inline!" />
+<a href="https://www.amazon.in/Parsing-Techniques-Practical-Monographs-Computer/dp/1441919015?keywords=parsing&qid=1638085295&qsid=257-4794149-6274627&s=books&sr=1-1&sres=1441919015%2C0128025816%2C8124609888%2C1402096240%2C1484232275%2C9812875514%2C9401072655%2C1402022948%2C9400733798%2C3030631885%2C1014063388%2C101419170X%2C9048155797%2C1598295969%2C101442996X%2C1014204887&linkCode=li3&tag=ps0f920-21&linkId=50f77147e82730c60cda7672480a76b1&language=en_IN&ref_=as_li_ss_il" target="_blank"><img border="0" src="//ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=1441919015&Format=_SL250_&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1&tag=ps0f920-21&language=en_IN" ></a><img src="https://ir-in.amazon-adsystem.com/e/ir?t=ps0f920-21&language=en_IN&l=li3&o=31&a=1441919015" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important; display:inline!" />
+
+</div>
+
+---
+
 The generated parsers produce a tree upon parsing, which may not be the desired data structure; however, these libraries provide sufficient APIs to convert the constructed tree to the desired data structure.
 
 There is more in Parser world; the type of parsing styles: top-down or bottom-up, Leftmost or Rightmost derivation. These design styles limit parsing capabilities of the parser. You may visit the following link to get a synoptic view of these design choices and their comparison:
