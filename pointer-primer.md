@@ -38,7 +38,7 @@ A variable may span multiple bytes. A variable of `int` type holds `4 bytes` in 
 
 ### Why we address a variable by its first-byte address? 🤔
 
-If size and the starting address of a variable are known, then all the associated byte addresses with the variable are easy to calculate. The type of a variable defines its size. By established norms, a multi-byte variable is always stored in contagious locations.
+If size and the starting address of a variable are known, then all the associated byte addresses with the variable are easy to calculate. The type of a variable defines its size. By established norms, a multi-byte variable is always stored in contiguous locations.
 
 ## 🚉 Last Stop — Pointer
 
