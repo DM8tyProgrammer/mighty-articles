@@ -4,31 +4,32 @@ subtitle: Variable Allusion | Pointers’ Primer
 description: Pointers are the essential concept of programming. Pointers are used to indirectly access variables or functions. 
 keywords: pointers, pointers in c, pointers in c++, pointers to function, pointer to object
 datePublished: ‘2018-02-04’
-lastModified: ‘2020-01-26’
+lastModified: ‘2022-03-01’
 image: https://miro.medium.com/max/1400/1*OB6t3wg6Ed6i7juPxq5aDg.png
 ---
 
-_Pointers_ are the essential concept of programming. These are most feared and misunderstood. “A little knowledge is a dangerous thing” fits well with Pointers.
+The concept of _pointers_ is fundamental to programming. These are the ones that are most feared and misunderstood. The phrase “A little knowledge is a dangerous thing” perfectly suits pointers.
 
-At first, pointers are hard to grasp. Everything you started in the beginning, is hard too.
+Pointers are challenging to grasp at first. Everything you started from the beginning is difficult as well!
 
-C and C++ support extended features of pointers. Other languages adopted a subset of features or variations of pointers.
+Extended pointer features are supported in C and C++. Other languages adopted a subset of pointer features or variants.
 
-> No matter which language you into, it is still worth understanding.
+> No matter which language you are into, it is still worth understanding.
 
-_This article assumes that you are aware of basic programming in C or C++. It is a long read._
+_This article assumes that you are familiar with basic C or C++ programming. It’s quite a lengthy read._
 
 ## 🚉 First Stop — Variable
 
 A _variable_ is a memory container where _value_ resides.
-![variable declation](https://miro.medium.com/max/860/1*Lnv3d4eFOiBSt09t3f2cgQ.png)
+![variable declaration syntax](https://miro.medium.com/max/860/1*Lnv3d4eFOiBSt09t3f2cgQ.png)
 
 A variable can be associated with:
 
-- A **name** is what you call the variable; it is an essential element of communication among programmers.
+- A **name** is what you call the variable; it is an essential part of communication among programmers.
 - A **type** defines the domain of values that can be stored inside the variable, encoding scheme (for primitive type), and the container’s memory size.
-- An **address** is where a variable resides in the memory; it may be physical or logical.
-  In memory, each byte is addressed for the processor to access for reading or writing value.
+- An **address** is the location of a variable in memory; it may be physical or logical.
+  
+Each byte in memory has an address that the processor may use to read or write data.
 
 A variable may span multiple bytes. A variable of `int` type holds `4 bytes` in memory (`4 bytes` span); it has four addresses, _but we always use its first-byte address._
 
@@ -36,14 +37,16 @@ A variable may span multiple bytes. A variable of `int` type holds `4 bytes` in 
 
 > The address of a variable always means the address of its first byte.
 
-### Why we address a variable by its first-byte address? 🤔
+### Why do we address a variable by its first-byte address? 🤔
 
-If size and the starting address of a variable are known, then all the associated byte addresses with the variable are easy to calculate. The type of a variable defines its size. By established norms, a multi-byte variable is always stored in contiguous locations.
+To keep things simple. Moreover, determining all of the related addresses is easy... If the size and the starting address of a variable are known.
+
+The size of a variable is defined by its type. According to established conventions, a multi-byte primitive typed variable is always stored in contagious places.
+
+So, if the address of a `four-byte int` variable is `10`, the other three addresses are `11`, `12`, and `13`.
 
 ## 🚉 Last Stop — Pointer
-
-A Pointer is a variable, points to another variable. Formally, the value of a Pointer is a memory address (starting address) of another variable.
-
+A _Pointer_ is a variable that points to another variable. Technically, A Pointer’s value is another variable’s memory address (the starting address).
 ![pointer declaration](https://miro.medium.com/max/1400/1*OB6t3wg6Ed6i7juPxq5aDg.png)
 
 Pointers are easy to follow if these are visualized graphically.
@@ -86,12 +89,10 @@ int *p1, *p2; // repeat * to declare another pointer.
 int* p1, v; // only p1 is pointer, v is interger variable
 ```
 
-A memory address is a number, _so the type of a pointer is always Integer despite whom it is pointing._
+A memory address is a number, _so the type of a pointer is always Integer despite its pointing._
 
 **If a pointer is an integer, then what about the type we set at the time of the declaration?**  
-It is the type of referred variable and only required _if pointer arithmetic is required else not._
-
-Let say it: **declared pointer type** for the sake of brevity. `void *` _(Generic pointer)_ is used if the referred variable type is not known.
+It’s the referenced variable’s type, and it’s only necessary _if pointer arithmetic is required; otherwise, it’s not_. Call it: “**declared pointer type**” for the sake of brevity. `void *` (Generic pointer) is used if the referred variable type is not known.
 
 ### Why we need pointers?
 
@@ -106,7 +107,7 @@ int second = 2; // 2 is copied to second
 
 ![](https://cdn-images-1.medium.com/max/1600/1*_-mSiLsVLUnmSU68PELHWg.png)
 
-The copying does not cause any problem for scalar (single-valued) types, but it would be a performance hit for multi-valued types (string, array, custom type).
+Copying isn’t a problem for scalar (single-valued) kinds, but it would be a performance hit for multi-valued types (string, array, custom type).
 
 So what is the solution? Send the values indirectly. **Pointers facilitate the indirect passing of the values.**
 
@@ -152,7 +153,7 @@ pointer[i] = *(pointer + i)  (see next section)
 
 You can interchange an array with a pointer for accessing and updating values.
 
-> Array name is a pointer to its first element.
+> An Array name is a pointer to its first element.
 
 ### Thinking Mathematically
 
@@ -185,7 +186,7 @@ print("%d", **pointerToPointerToA); //print a's value
 
 ### Pointers Arithmetic
 
-An integer can be added or subtracted to/from a pointer. This construct can be used to iterate an array or a string. But remember, you can do such math only if you have defined the **declared type** of the pointer.
+An integer can be added or subtracted to/from a pointer. You may use this construct to iterate across an array or a string. But keep in mind that you can only conduct this calculation if you've specified the pointer's **declared type**.
 Adding a number to a pointer follows the following equation:
 
 ```c
@@ -262,9 +263,7 @@ sort(numbers, asc)
 sort(numbers, desc)
 
 ```
-
-Pointers to User Defined Types
-A pointer can also point to user defined types: `class`, `struct`
+A pointer can also point to user-defined types: `class`, `struct`
 
 ```c
 // class : C++
@@ -305,8 +304,3 @@ It is wrong to say that languages other than C and C++ do not support pointers. 
 * Pointers allow creating dynamic arrays.
 * `->` operator is used to access type member: field or method.
 * A Null Pointer does not point to anything, and a Dangling pointer stores an invalid address.
----
-
-I am not actively developing in C/C++. So if you find something outdated or there are new developments in Pointers, please reach out to me:
-
-@ DM8typrogrammer
