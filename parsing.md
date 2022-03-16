@@ -4,11 +4,11 @@ subtitle: A brief introduction
 description: Parsing is a process of converting formatted text into a data structure.
 keywords: parsing, scanning, tokenisation, parsing phases, parsing example
 datePublished: ‘2019-08-05’
-lastModified: ‘2020-12-19’
+lastModified: ‘2022-03-16’
 image: https://miro.medium.com/max/1400/1*AmS9rVgJeizwqtC0_XHGlw.png
 ---
 
-**Parsing** is a process of converting _formatted text_ into a _data structure_. A data structure type can be any suitable representation of the information engraved in the _source text_.
+**Parsing** is the process of converting _formatted text_ into a _data structure_. A data structure type can be any suitable representation of the information engraved in the _source text_.
 
 - _Tree_ type is a common and standard choice for XML parsing, HTML parsing, JSON parsing, and any programming language parsing. The output tree is called _Parse Tree_ or _Abstract_ _Syntax Tree_. In HTML context, it is called _Document Object Model_ (DOM).
 - A CSV file parsing can result in a List of List of values _or_ a List of Record objects.
@@ -17,13 +17,13 @@ image: https://miro.medium.com/max/1400/1*AmS9rVgJeizwqtC0_XHGlw.png
 A piece of program that does parsing is called _Parser_.
 
 ## How it works
-Parser analyses source text against the format* prescribed. If source text does not match against format error is thrown or returned.
-* If source text does not match against format error is thrown or returned.
-* If matches then “data structure” is returned.
+Parser analyses the source text against the defined format*.
+* If source text does not match against format, errors are thrown or returned.
+* If matches, then “data structure” is returned.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*Tj1H3orLHUpQlbBR45iNNA.png)
 
-*format is coded inside the parser.
+*format is coded inside Parser.
 > Format is the DNA of a parser.
 
 ## Small Case Study
@@ -41,12 +41,9 @@ class Date {
 ![](https://miro.medium.com/max/1400/1*AmS9rVgJeizwqtC0_XHGlw.png)
 
 ### Implementation Note
+__Regular Expression¹__ (_regex_ for short) would be my choice to parse Dates. Regex helps in matching and extracting parts of strings (_if matched_). It's an example of "Proxy Parsing," which involves delegating parsing to another abstract system.
 
-For Date parsing, I would be using *Regular Expression*¹ (_regex_ for short). Regex can be matched against a string. It also helps in extracting part of the source text _if it is matched._
-
-
-_Note: This is going to be a small-scale illustration of parsing with "Regex." This might be a fair approach for one-two lines input text but not in every case. You may have to write a parser by hand (most complex) or use Parser Generator tools (moderately complex)._
-
+_Note: This will be a small-scale illustration of parsing with "Regex." It might be a fair approach for one to two lines of input text. You may have to write a parser by hand (which is the most difficult) or use Parser Generator tools (moderately complex) for considerable input._
 ### Code
 
 The parsing and extracting date element is as:
@@ -89,11 +86,12 @@ Each group is numbered, the first group is assigned “1”, the second one is g
 3. If the match is successful, then Day, month, and year are extracted from the source string using *Group Construct*provided by Regular Expression API. It is a standard construct in any Regular Expression API in any language.
 4. The extracted date parts can be validated; related code is skipped for you to exercise.
 
-This is an illustration of Regular Expression based parsing, which is limited to format, which can be defined by regular expressions. It is _a basic example_ of parsing. A programming language or format like XML parsing is complex in nature. You can refer to the book named “Crafting Interpreters” to get an idea about a full-scaled parsing.
-[Crafting Interpreters](https://craftinginterpreters.com/)
+_Regular Expression based parsing_ is limited to format, which regular expressions can define. A programming language or format like XML parsing is complex. 
 
-You can also read about “Lezer : Code Mirror’s Parsing System”
-[Lezer](https://marijnhaverbeke.nl/blog/lezer.html)
+You can refer to the book [Crafting Interpreters](https://amzn.to/3IhGtnT) to get an idea about a full-scaled parsing.
+
+You can also read about [Lezer : Code Mirror’s Parsing System](https://marijnhaverbeke.nl/blog/lezer.html)
+
 
 ## Phases of Parsing
 
@@ -103,7 +101,7 @@ _Parsing_ can be scoped as a composition of Scanning and Syntactic Analysis or j
 
 _Scanning_ is a process of converting a stream of characters into _tokens._
 ![](https://miro.medium.com/max/1400/1*NMqJryiyOtf3s757A3xEgQ.png)
-A token represents a “concept” introduced by format. Logically, a token can be considered as a label assigned to one or more characters. From a processing point of view: A _token_ is an object, can contain _lexeme³_, location information, and more.
+A token represents a “concept” introduced by format and it token can be considered as a label assigned to one or more characters. From a processing point of view: A _token_ is an object, can contain type, _lexeme³_, location information, and more.
 
 In Java language: `if`, `while`, `int` are examples of tokens. In date parsing, tokens are defined by Regex; `\d{2}` (day, month), `—` (separator), `\d{4}` (year) are tokens. Note: Day and month are the same token type. A token is defined by “the pattern of characters” not by locations of characters.
 
@@ -111,7 +109,7 @@ Scanning is also called _Tokenization_ or _Lexical Analysis_. A part of the prog
 
 ### Syntactic Analysis
 
-_Syntactic Analysis_ analyses the structure formed as keeping tokens in order as their positions. It also validates and extracts engraved data to create the preferred Data Structure.
+_Syntactic Analysis_ examines the structure formed as "keeping tokens as they appeared." It also validates and extracts engraved data to create the preferred Data Structure.
 ![](https://miro.medium.com/max/1400/1*BbkHRIrzKed91Y3VILCEMQ.png)
 In date parsing example: “day is followed by month and year.” The order is checked by Regex Engine, also extraction is done based on order and matches.
 
@@ -130,10 +128,9 @@ Many times, parsing tasks are delegated to parser code generators like [Antlr](h
 
 ---
 <div class="flex">
-<a target="_blank"  href="https://www.amazon.in/gp/offer-listing/B01KGKR6SW/ref=as_li_tl?ie=UTF8&camp=3638&creative=24630&creativeASIN=B01KGKR6SW&linkCode=am2&tag=ps0f920-21&linkId=3791cb5ea2b5d28a486f0c40dbf8c432"><img border="0" src="//ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=IN&ASIN=B01KGKR6SW&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=ps0f920-21" style="display:inline-block!" ></a>
-<a href="https://www.amazon.in/Crafting-Interpreters-Robert-Nystrom/dp/0990582930?pd_rd_w=objnC&pf_rd_p=3d761e30-287e-43cf-9e27-658176acf887&pf_rd_r=AN1TDWD1D9THDRY1NVM0&pd_rd_r=251c6d9d-6861-4d7e-99ac-52ecd6ab0732&pd_rd_wg=9ItZK&pd_rd_i=0990582930&psc=1&linkCode=li3&tag=ps0f920-21&linkId=1e9d278775d2174d7d435369478b5d0a&language=en_IN&ref_=as_li_ss_il" target="_blank"><img border="0" src="//ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=0990582930&Format=_SL250_&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1&tag=ps0f920-21&language=en_IN" ></a><img src="https://ir-in.amazon-adsystem.com/e/ir?t=ps0f920-21&language=en_IN&l=li3&o=31&a=0990582930" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important; display:inline!" />
-<a href="https://www.amazon.in/Parsing-Techniques-Practical-Monographs-Computer/dp/1441919015?keywords=parsing&qid=1638085295&qsid=257-4794149-6274627&s=books&sr=1-1&sres=1441919015%2C0128025816%2C8124609888%2C1402096240%2C1484232275%2C9812875514%2C9401072655%2C1402022948%2C9400733798%2C3030631885%2C1014063388%2C101419170X%2C9048155797%2C1598295969%2C101442996X%2C1014204887&linkCode=li3&tag=ps0f920-21&linkId=50f77147e82730c60cda7672480a76b1&language=en_IN&ref_=as_li_ss_il" target="_blank"><img border="0" src="//ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=1441919015&Format=_SL250_&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1&tag=ps0f920-21&language=en_IN" ></a><img src="https://ir-in.amazon-adsystem.com/e/ir?t=ps0f920-21&language=en_IN&l=li3&o=31&a=1441919015" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important; display:inline!" />
+<a href="https://www.amazon.com/Definitive-ANTLR-4-Reference/dp/1934356999?crid=2P4XC6UZH0KMI&keywords=antlr&qid=1647404437&sprefix=antlr%2Caps%2C308&sr=8-1&linkCode=li2&tag=dm8typrogramm-20&linkId=2f17ad381c45641e597e5cf5b75ebdfb&language=en_US&ref_=as_li_ss_il" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=1934356999&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=dm8typrogramm-20&language=en_US" ></a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=dm8typrogramm-20&language=en_US&l=li2&o=1&a=1934356999" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 
+<a href="https://www.amazon.com/Build-Your-Own-Programming-Language/dp/1800204809?crid=38QJOBK9UQBXK&keywords=crafting+interpreters&qid=1647404577&sprefix=%2Caps%2C348&sr=8-2&linkCode=li2&tag=dm8typrogramm-20&linkId=8fac25f2b95fe2aab95aedee07a736e6&language=en_US&ref_=as_li_ss_il" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=1800204809&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=dm8typrogramm-20&language=en_US" ></a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=dm8typrogramm-20&language=en_US&l=li2&o=1&a=1800204809" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 </div>
 
 ---
