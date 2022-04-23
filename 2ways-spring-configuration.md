@@ -70,7 +70,7 @@ annotationProcessor 'org.springframework.boot:spring-boot-configuration-processo
 
 3. IDE intercepts generated file and helps you write configuration.
 
-![](https://miro.medium.com/max/6720/1*T3SzqgOdqOs5UuxQzlVxAA.png)
+![IDE and configuration illustration](https://miro.medium.com/max/6720/1*T3SzqgOdqOs5UuxQzlVxAA.png)
 
 IntelliJ IDEA — Ultimate Edition detects the spring meta processor on the classpath and provides hints based upon metadata file generated.
 
@@ -128,13 +128,13 @@ At the time of writing, [Draft#8 or 2019–09](https://json-schema.org/specifica
 
 2. You create schema-mapping: mapping of files against schema governance.
 
-![](https://miro.medium.com/max/6480/1*qeBViqhJOKRRofYhrIBFeQ.png)
+![JSON schema configuration in IntelliJ Idea](https://miro.medium.com/max/6480/1*qeBViqhJOKRRofYhrIBFeQ.png)
 
 <figcaption>Mapping Definition | IntelliJ IDEA Community Edition</figcaption>
 
 3. IDE provides hints based upon schema provided to helps you write schema efficiently.
 
-![](https://miro.medium.com/max/5600/1*Qsr3CONNTPfD_S7ZaeSFrA.png)
+![JSON scheam function demostration](https://miro.medium.com/max/5600/1*Qsr3CONNTPfD_S7ZaeSFrA.png)
 
 ## Comparison
 
@@ -153,7 +153,7 @@ db:
 ```
 
 Here is IDE performance on both style:
-![](https://miro.medium.com/max/5000/1*78nH6B-DFIthEp1Zjoj0gg.png)
+![side by side comparison of Spring Configuration Meta &  Json Schema](https://miro.medium.com/max/5000/1*78nH6B-DFIthEp1Zjoj0gg.png)
 
 The types of properties are not shown in suggestions in the case of YAML schema, yet it suggests the type while validating a property. With Spring Boot Configuration Metadata, Java exception message _Type Mismatch_ is shown.
 
@@ -193,23 +193,23 @@ Oracle-specific properties if `type` is `oracle` or MySQL-specific properties if
 
 #### UML Class diagram for a possible solution
 
-![](https://miro.medium.com/max/1160/1*YmJ_9Vz5wEn6AZF58H7FKQ.png)
+![class diagram for db confinguration](https://miro.medium.com/max/1160/1*YmJ_9Vz5wEn6AZF58H7FKQ.png)
 
 IDE is unable to distinguish Oracle properties with Mysql Properties in case of Spring Configuration Metadata. The generated spring metadata JSON file does not describe or command conditional nature of properties. Also, Spring Configuration metadata specification does not specify any conditional construct.
 
-![](https://miro.medium.com/max/1280/1*H1E1WKmlXsFFVdgETgBxCQ.gif)
+![db properties hint by IDE](https://miro.medium.com/max/1280/1*H1E1WKmlXsFFVdgETgBxCQ.gif)
 
 <figcaption> With Spring Configuration Metadata</figcaption>
 
 IDE is able to intercept the conditional properties in case of Yaml Schema.
 
-![](https://miro.medium.com/max/1280/1*y9XJLZK1LD3wBH9D0-5KVA.gif)
+![Conditional hint by IDE](https://miro.medium.com/max/1280/1*y9XJLZK1LD3wBH9D0-5KVA.gif)
 
 <figcaption>with Yaml Schema</figcaption>
 
 ## 💭 Wrapping Up
 
-![](https://miro.medium.com/max/11300/0*hGQqWQA5f867CaCR)
+![two ways - general image](https://miro.medium.com/max/11300/0*hGQqWQA5f867CaCR)
 
 <figcaption>Photo by Pablo García Saldaña on Unsplash</figcaption>
 
@@ -233,3 +233,4 @@ Spring developers should include conditional properties construct, or they can a
    https://stackoverflow.com/questions/53962547/polymorphic-configuration-properties-in-spring-boot
 4. Oracle Driver
    https://docs.oracle.com/cd/E13222_01/wls/docs81/jdbc_drivers/oracle.html
+ 

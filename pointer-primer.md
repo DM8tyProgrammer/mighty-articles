@@ -4,7 +4,7 @@ subtitle: Variable Allusion | Pointers’ Primer
 description: Pointers are the essential concept of programming. Pointers are used to indirectly access variables or functions. 
 keywords: pointers, pointers in c, pointers in c++, pointers to function, pointer to object
 datePublished: ‘2018-02-04’
-lastModified: ‘2022-03-01’
+lastModified: ‘2022-04-23’
 image: https://miro.medium.com/max/1400/1*OB6t3wg6Ed6i7juPxq5aDg.png
 ---
 
@@ -105,13 +105,13 @@ int first = a; // value of a is copied to first
 int second = 2; // 2 is copied to second
 ```
 
-![](https://cdn-images-1.medium.com/max/1600/1*_-mSiLsVLUnmSU68PELHWg.png)
+![function calling with variables](https://cdn-images-1.medium.com/max/1600/1*_-mSiLsVLUnmSU68PELHWg.png)
 
 Copying isn’t a problem for scalar (single-valued) kinds, but it would be a performance hit for multi-valued types (string, array, custom type).
 
 So what is the solution? Send the values indirectly. **Pointers facilitate the indirect passing of the values.**
 
-![](https://cdn-images-1.medium.com/max/1600/1*0C1bhq9LfiAl_SjNthbBDA.png)
+![function calling with pointers](https://cdn-images-1.medium.com/max/1600/1*0C1bhq9LfiAl_SjNthbBDA.png)
 
 ### How do I access the referred variable's value back through the pointer?
 
@@ -159,7 +159,7 @@ You can interchange an array with a pointer for accessing and updating values.
 
 The beauty of pointers is that you can visualize their assignment statement as algebraic equations.
 
-![](https://miro.medium.com/max/1400/1*oDsIkOjhM-JSm8YVCa2QZA.png)
+![pointer understanding trick](https://miro.medium.com/max/1400/1*oDsIkOjhM-JSm8YVCa2QZA.png)
 
 By thinking this way, you can get cozy with pointers to any level 😉.
 
@@ -194,7 +194,7 @@ new-location = old-location + number x sizeof(<type you declared>);
 ```
 
 Visually, it can be imagined as:
-![](https://miro.medium.com/max/1400/1*2ZVrziy_m4c0kPtB41vaBA.png)
+![pointer and array in memory](https://miro.medium.com/max/1400/1*2ZVrziy_m4c0kPtB41vaBA.png)
 
 ```c
 // Calculating the length of string

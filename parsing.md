@@ -4,7 +4,7 @@ subtitle: A brief introduction
 description: Parsing is a process of converting formatted text into a data structure.
 keywords: parsing, scanning, tokenisation, parsing phases, parsing example
 datePublished: ‘2019-08-05’
-lastModified: ‘2022-03-16’
+lastModified: ‘2022-04-23’
 image: https://miro.medium.com/max/1400/1*AmS9rVgJeizwqtC0_XHGlw.png
 ---
 
@@ -21,7 +21,7 @@ Parser analyses the source text against the defined format*.
 * If source text does not match against format, errors are thrown or returned.
 * If matches, then “data structure” is returned.
 
-![](https://cdn-images-1.medium.com/max/1600/1*Tj1H3orLHUpQlbBR45iNNA.png)
+![parsing defination](https://cdn-images-1.medium.com/max/1600/1*Tj1H3orLHUpQlbBR45iNNA.png)
 
 *format is coded inside Parser.
 > Format is the DNA of a parser.
@@ -38,7 +38,7 @@ class Date {
 }
 ```
 
-![](https://miro.medium.com/max/1400/1*AmS9rVgJeizwqtC0_XHGlw.png)
+![parsing task as black box](https://miro.medium.com/max/1400/1*AmS9rVgJeizwqtC0_XHGlw.png)
 
 ### Implementation Note
 __Regular Expression¹__ (_regex_ for short) would be my choice to parse Dates. Regex helps in matching and extracting parts of strings (_if matched_). It's an example of "Proxy Parsing," which involves delegating parsing to another abstract system.
@@ -100,7 +100,7 @@ _Parsing_ can be scoped as a composition of Scanning and Syntactic Analysis or j
 ### Scanning
 
 _Scanning_ is a process of converting a stream of characters into _tokens._
-![](https://miro.medium.com/max/1400/1*NMqJryiyOtf3s757A3xEgQ.png)
+![scanning process illustration](https://miro.medium.com/max/1400/1*NMqJryiyOtf3s757A3xEgQ.png)
 A token represents a “concept” introduced by format and it token can be considered as a label assigned to one or more characters. From a processing point of view: A _token_ is an object, can contain type, _lexeme³_, location information, and more.
 
 In Java language: `if`, `while`, `int` are examples of tokens. In date parsing, tokens are defined by Regex; `\d{2}` (day, month), `—` (separator), `\d{4}` (year) are tokens. Note: Day and month are the same token type. A token is defined by “the pattern of characters” not by locations of characters.
@@ -110,7 +110,7 @@ Scanning is also called _Tokenization_ or _Lexical Analysis_. A part of the prog
 ### Syntactic Analysis
 
 _Syntactic Analysis_ examines the structure formed as "keeping tokens as they appeared." It also validates and extracts engraved data to create the preferred Data Structure.
-![](https://miro.medium.com/max/1400/1*BbkHRIrzKed91Y3VILCEMQ.png)
+![syntactic analysis illustration](https://miro.medium.com/max/1400/1*BbkHRIrzKed91Y3VILCEMQ.png)
 In date parsing example: “day is followed by month and year.” The order is checked by Regex Engine, also extraction is done based on order and matches.
 
 Errors reported by this phase are called _Syntactic Errors_. Going back to Date parsing example, `99-JAN-2021` is an invalid Date; however, `99–99–9999` is a valid Date because rule `(\d{2})-(\d{2})-(\d{4})` says so. It may seem absurd, but parsers generally validate _Syntactic Correctness._
@@ -124,7 +124,7 @@ The scale of parsing determines the inclusion or exclusion of Scanning as part o
   
 Many times, parsing tasks are delegated to parser code generators like [Antlr](https://www.antlr.org/) or [Lex](http://dinosaur.compilertools.net/) . These tools require a set of rules or grammar and generate parser code. 
 
-![](https://miro.medium.com/max/1400/1*xKb5f_JFv8Detbicdy4ggQ.png)
+![parser and parser generator defination](https://miro.medium.com/max/1400/1*xKb5f_JFv8Detbicdy4ggQ.png)
 
 ---
 <div class="flex">

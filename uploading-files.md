@@ -3,7 +3,7 @@ title: Uploading files over the web
 tags: system design
 description: 'Uploading files over web is not an easy task. It involves considerable challenges in developing a solution that works for all file sizes.'
 datePublished: 2020-03-25
-lastModified: 2021-04-04
+lastModified: 2022-04-23
 image: 'https://cdn-images-1.medium.com/max/1600/1*pOBmn1GD5jrXbceIlrnVpg.png'
 ---
 
@@ -77,7 +77,7 @@ Overall uploading process can be conceptualized as two standard HTTP requests:
 1. A file metadata need to be sent first.
 2. Based upon the server response file can be uploaded.
 
-![](https://cdn-images-1.medium.com/max/1600/1*VZgESv6oCodmkDZw7rIFig.png)
+![server controlled upload](https://cdn-images-1.medium.com/max/1600/1*VZgESv6oCodmkDZw7rIFig.png)
 
 You need to develop a customised protocol of communication to realize this mechanism.
 
@@ -85,7 +85,7 @@ You need to develop a customised protocol of communication to realize this mecha
 
 Let’s assume a situation server has `1GB` space left. Imagine, two clients asking to upload at the same time:
 
-![](https://cdn-images-1.medium.com/max/1600/1*pOBmn1GD5jrXbceIlrnVpg.png)
+![request failing after server permit as low space on server](https://cdn-images-1.medium.com/max/1600/1*pOBmn1GD5jrXbceIlrnVpg.png)
 
 Both clients would get permission to upload, and after a while, both requests would be interrupted when Server gets `1 GB` of combined data from both requests.
 

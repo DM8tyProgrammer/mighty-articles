@@ -54,7 +54,7 @@ Type `squash` by replacing pick to make commit combined with the last commit.
 
 In this case, I am going to combine the last two commits to the first one. So I typed `squash` for the last two commits. _Isn't simple?_
 
-![](https://cdn-images-1.medium.com/max/2400/1*TtZNXAnD73AbE7ULCMTKSA.png)
+![rebase interative - squash option](https://cdn-images-1.medium.com/max/2400/1*TtZNXAnD73AbE7ULCMTKSA.png)
 
 <figcaption>bb5e3d1 ← bb5e3d1 + d1c8507 + 6d7c3cc</figcaption>
 
@@ -67,15 +67,15 @@ bb5e3d1 ← bb5e3d1 + d1c8507 + 6d7c3c
 ```
 
 _Visually_
-![](https://cdn-images-1.medium.com/max/2400/1*UnFBSTQ31jzg0ryyHlvMHQ.png)
+![Squashing all three commits](https://cdn-images-1.medium.com/max/2400/1*UnFBSTQ31jzg0ryyHlvMHQ.png)
 
 Once you saved commands, Git allows you to change the message of the newly combined commit.
 
-![](https://cdn-images-1.medium.com/max/2400/1*s19RhFyIKJLp0hQmIekraw.png)
+![changing message of squash commit screen](https://cdn-images-1.medium.com/max/2400/1*s19RhFyIKJLp0hQmIekraw.png)
 
 <figcaption>edit message</figcaption>
 
-![](https://cdn-images-1.medium.com/max/2400/1*T64kb-Pax5rXiih1DDmVrw.png)
+![history rewriting showcase](https://cdn-images-1.medium.com/max/2400/1*T64kb-Pax5rXiih1DDmVrw.png)
 
 <figcaption>difference between history</figcaption>
 

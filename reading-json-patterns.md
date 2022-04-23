@@ -3,7 +3,7 @@ title: Patterns of Reading JSON
 description: 'JSON can be read or mapped to domain objects using two broad categories of APIs: Binding (High-Level) and Streaming (Low-Level).'
 keywords: json, gson, reading json, jackson, json streaming, json parsing, json binding
 datePublished: '2018-06-03'
-lastModified: '2020-06-18'
+lastModified: '2022-04-23'
 tags: 'json'
 ---
 
@@ -73,7 +73,7 @@ Repl.it → [https://repl.it/@DM8tyProgrammer/NonDomainBinding](https://repl.it/
 ## JSON — Domain Model Binding
 
 Almost whole JSON is mapped directly to equivalent Domain or Business Objects; Domain object mimics the structure of JSON with identical fields and compatible types.
-![](https://miro.medium.com/max/1400/1*25PKdKqP9a2yIqJvKTfzgg.png)
+![json domain-model binding](https://miro.medium.com/max/1400/1*25PKdKqP9a2yIqJvKTfzgg.png)
 
 ### In Action
 
