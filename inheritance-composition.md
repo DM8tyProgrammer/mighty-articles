@@ -4,7 +4,7 @@ subtitle: 'Tools of Object Oriented Programming'
 description: Choosing between composition and inheritance is hard. Composition and Inheritance are the building blocks of an application structure. It is imperative to know when to use which one.
 keywords: inheritance vs composition, object oriented programming, software engineering, inheritance, composition, inheritance in java, inheritance in kotlin
 datePublished: '2019-09-14'
-lastModified: '2020-03-10'
+lastModified: '2022-04-23'
 ---
 
 With the introduction of OOPs, Inheritance and Composition entered our senses and still confusing us.
@@ -199,7 +199,7 @@ class Topping(val price: Int) {
 
 ---
 
-# Takeaways
+## Takeaways
 
 - In Inheritance, the structure imposition introduces tight coupling between both connected classes; it restricts their future editing.
 - Inheritance is well suited for uniformity.
@@ -208,7 +208,7 @@ class Topping(val price: Int) {
 
 ---
 
-# References
+## References
 
 1. Disable specific annotation in Jackson
    https://github.com/FasterXML/jackson-databind/issues/133
