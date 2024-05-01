@@ -81,11 +81,11 @@ pace(request: Request<T>): Promise<T> {
 
 When using the above implementation, pace method would execute the request immediately after the reception, similar to code without pacing. We thus need to take this further.
 
-## Micro-batching
+### Micro-batching
 
 The requests must be batched and executed once per second for appropriate implementation. This technique is referred to as micro-batching: _Smaller batch, Frequent Execution_. We need a Queue and an Executor to complete requests in a controlled manner.
 
-## Queue
+### Queue
 
 A request will be queued _as soon as it is received_. We also need to return a Promise of the request result. But we can't resolve the promise without executing the request.
 
@@ -96,7 +96,7 @@ pace(request: Request<T>): Promise<T> {
 }
 ```
 
-## Proxy Promise
+### Proxy Promise
 A _Proxy Promise_, which will capture the result of the request when executed, will be returned. We need to store its resolve and reject references along with the request.
 
 ```typescript
@@ -115,7 +115,7 @@ pace(request: Request<T>): Promise<T> {
 ```
 
 
-## Execution
+### Execution
 A solid design choice is keeping request execution in a separate function that executes multiple queued requests. Now, we need to work on triggering it once every second.
 
 
@@ -131,9 +131,9 @@ private executeRequests() {
 ```
 
 
-setTimeout() is a reasonable construct to use than setInterval(), as with setTimeout we can control the next execution.
+`setTimeout()` is a reasonable construct to use than setInterval(), as with setTimeout we can control the next execution.
 
-Scheduling Logic
+#### Scheduling Logic
 When a request is accepted, it may be processed immediately or after a few milliseconds of delay if no execution is scheduled.
 On the execution side, after triggering requests, we check the queue size for the scheduling next execution with 1s delay.
 
