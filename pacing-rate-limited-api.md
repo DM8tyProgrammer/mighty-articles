@@ -4,7 +4,7 @@ subtitle:
 description: 'Learn about making a Pacer that paces the requests hitting metered API at the desired rate using Queues and timeout.'
 keywords: pacing rate limited api, pacing, rate limited api
 datePublished: ‘2022-08-30’
-lastModified: ‘2024-04-14’
+lastModified: ‘2024-05-01’
 image: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*JfSDFRJtl5LVPKh2hkKpsA.png
 ---
 
@@ -166,7 +166,7 @@ private executeAndScheduleNext() {
 The implementation works if requests are completed within one second; it is hardly the case in the real world. To make it more effective, we must track the number of requests being processed and accordingly adjust the pace.
 
 The full code is accessible at:
-
+[https://github.com/DM8tyProgrammer/api-pacer](https://github.com/DM8tyProgrammer/api-pacer)
 
 
 ## What’s next?
